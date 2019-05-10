@@ -1,0 +1,99 @@
+/* Indholdfortegnelse:
+
+	1. Font import
+	2. Properties for overordnet elementer/molekyler
+	3. Container-flex klasse og Main klasse
+	4.
+	5.
+	6.
+	7.
+	8.
+	9.
+	10.
+	11.
+
+  */
+
+/* 1. Properties for overordnet elementer/molekyler */
+
+
+@import "settings.css"
+
+
+body{
+
+	/*background-color: rgba(255,0,0,0.2);*/
+	background-color: var(--background);
+}
+
+
+main{
+
+
+}
+
+
+h1{
+
+
+}
+
+
+p{
+
+
+}
+
+
+/* 2. container-flex klasse */ 
+
+.main{
+
+	margin: auto;
+	width: 80%;
+	height: 100vh;
+	background-color: rgba(255,255,0,0.1);
+
+}
+
+
+/*  */
+
+section.m-introduction-text{
+
+	margin: auto;
+	width: inherit;
+	height: 40vh;
+
+}
+
+div.a-introduction-container{
+
+	width: 50%;
+	height:30vh;
+	background-color: rgab(255,0,)
+
+
+}
+
+h1.a-introduction-text-header{
+
+	margin: auto;
+    text-align: center;
+    font-size: 4em;
+    color: white;
+}
+
+
+@media only screen and (max-width: 360px){
+
+	body{}
+
+}
+
+@media only screen and (max-width: ){
+
+	body{}
+	
+}
+
