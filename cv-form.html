@@ -10,6 +10,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="styles/normalize.css" rel="stylesheet">
+    <title>NemCV - Skriv dine info</title>
 </head>
 <body>
         <!--       MAIN CONTAINER              -->
@@ -40,38 +41,37 @@
                     </div>
                 </div>
 
-                    <!--  CONTAINER FOR CV IMAGE, E-MAIL AND SOCIAL MEDIA LINKS   -->
-                    <div class="t-img-social">
+                <!--  CONTAINER FOR CV IMAGE, E-MAIL AND SOCIAL MEDIA LINKS   -->
+                <div class="t-img-social">
 
-                        <!--    MOLECULE FOR IMAGE          -->
-                        <div class="m-cv-image">
-                            <label for="image">Billede</label>
-                            <input type="url" id="image" class="image" name="image" placeholder="URL til dit CV billede" />
+                    <!--    MOLECULE FOR IMAGE          -->
+                    <div class="m-cv-image">
+                        <label for="image">Billede</label>
+                        <input type="url" id="image" class="image" name="image" placeholder="URL til dit CV billede" />
+                    </div>
+
+                    <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
+                    <div class="m-social">
+                        <div class="a-social-age">
+                            <label for="age">Alder</label>
+                            <input type="number" id="age" class="age" name="age" placeholder="Din alder i år" min="15" max="120" />
                         </div>
-
-                        <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
-                        <div class="m-social">
-                            <div class="a-social-age">
-                                <label for="age">Alder</label>
-                                <input type="number" id="age" class="age" name="age" placeholder="Din alder i år" min="15" max="120" />
-                            </div>
-                            Kontakt mig
-                            <div class="a-social-email">
-                                <label for="email">E-mail</label>
-                                <input type="email" id="email" class="email" name="email" placeholder="din@email.com" />
-                            </div>
-                            <div class="a-social-facebook">
-                                <label for="facebook">Facebook</label>
-                                <input type="url" id="facebook" class="facebook" name="facebook" placeholder="Din Facebook" />
-                            </div>
-                            <div class="a-social-twitter">
-                                <label for="twitter">Twitter</label>
-                                <input type="url" id="twitter" class="twitter" name="twitter" placeholder="Din Twitter"/>
-                            </div>
-                            <div class="a-social-linkedin">
-                                <label for="linkedin">LinkedIn</label>
-                                <input type="url" id="linkedin" class="linkedin" name="linkedin" placeholder="Din LinkedIn" />
-                            </div>
+                        Kontakt mig
+                        <div class="a-social-email">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" class="email" name="email" placeholder="din@email.com" />
+                        </div>
+                        <div class="a-social-facebook">
+                            <label for="facebook">Facebook</label>
+                            <input type="url" id="facebook" class="facebook" name="facebook" placeholder="Din Facebook" />
+                        </div>
+                        <div class="a-social-twitter">
+                            <label for="twitter">Twitter</label>
+                            <input type="url" id="twitter" class="twitter" name="twitter" placeholder="Din Twitter"/>
+                        </div>
+                        <div class="a-social-linkedin">
+                            <label for="linkedin">LinkedIn</label>
+                            <input type="url" id="linkedin" class="linkedin" name="linkedin" placeholder="Din LinkedIn" />
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,6 @@
                         <button class="a-tab-add-work"></button> <!-- Skal have et ikon eller noget -->
                     </div>
                 </div>
-
 
                 <input type="submit" id="submit-button" />
 
