@@ -1,22 +1,18 @@
 <!--
-    This is the input page of the site.
+    This is the output page of the site.
     It has a template for the CV inside <main>
-        with inputs for adding data.
-    The form sends to cv-finished.html to display a
-        finished CV.
+        that contains the data from cv-form.html.
 -->
 <!DOCTYPE html>
 <html lang="da">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="styles/normalize.css" rel="stylesheet">
-    <title>NemCV - Skriv dine info</title>
+    <title>NemCV - Dit CV</title>
 </head>
 <body>
         <!--       MAIN CONTAINER              -->
         <main class="main container-flex">
-
-            <form action="cv-finished.html" method="POST" class="cv-form">
 
                 <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
                 <div class="t-basic-social">
@@ -27,16 +23,18 @@
                         <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
                         <div class="m-basic">
                             <label for="name">Navn</label>
-                            <input type="text" id="name" class="name" name="name" placeholder="Dit fulde navn" />
-
+                            <div id="name" class="name">
+                            </div>
                         </div>
                         <div class="a-basic-city">
                             <label for="city">By</label>
-                            <input type="text" id="city" class="city" name="city" placeholder="Din by"/>
+                            <div id="city" class="city">
+                            </div>
                         </div>
                         <div class="a-basic-misc-text">
                             <label for="misc-text">Om dig</label>
-                            <textarea id="misc-text" class="misc-text" name="misc-text" placeholder="Noget fritekst om dig, så som interesser eller lignende"></textarea>
+                            <div id="misc-text" class="misc-text">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,32 +44,36 @@
 
                     <!--    MOLECULE FOR IMAGE          -->
                     <div class="m-cv-image">
-                        <label for="image">Billede</label>
-                        <input type="url" id="image" class="image" name="image" placeholder="URL til dit CV billede" />
+                        <img id="image" class="image" src="" alt="Your CV image">
                     </div>
 
                     <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
                     <div class="m-social">
                         <div class="a-social-age">
                             <label for="age">Alder</label>
-                            <input type="number" id="age" class="age" name="age" placeholder="Din alder i år" min="15" max="120" />
+                            <div id="age" class="age">
+                            </div>
                         </div>
                         Kontakt mig
                         <div class="a-social-email">
                             <label for="email">E-mail</label>
-                            <input type="email" id="email" class="email" name="email" placeholder="din@email.com" />
+                            <div id="email" class="email">
+                            </div>
                         </div>
                         <div class="a-social-facebook">
                             <label for="facebook">Facebook</label>
-                            <input type="url" id="facebook" class="facebook" name="facebook" placeholder="Din Facebook" />
+                            <div id="facebook" class="facebook" name="facebook">
+                            </div>
                         </div>
                         <div class="a-social-twitter">
                             <label for="twitter">Twitter</label>
-                            <input type="url" id="twitter" class="twitter" name="twitter" placeholder="Din Twitter"/>
+                            <div id="twitter" class="twitter">
+                            </div>
                         </div>
                         <div class="a-social-linkedin">
                             <label for="linkedin">LinkedIn</label>
-                            <input type="url" id="linkedin" class="linkedin" name="linkedin" placeholder="Din LinkedIn" />
+                            <div id="linkedin" class="linkedin">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -86,23 +88,21 @@
                             Check boxes??
                         </div>
                     </div>
-                    <button class="a-tab-add-skill"></button> <!-- Skal have et ikon eller noget -->
                 </div>
 
                 <!-- MOLECULE FOR SECTORS -->
                 <div class="m-sectors">
                     <div class="a-sector">
-                        <!-- DET HER SKAL GØRES BEDRE, DROPDOWN??? -->
-                        <label for="sector-1">Branche</label>
-                        <input type="text" class="sector-1" name="sector-1" placeholder="En branche" />
+                        <div class="sector-1">
+                        </div>
                     </div>
                     <div class="a-sector">
-                        <label for="sector-2">Branche</label>
-                        <input type="text" class="sector-2" name="sector-2" placeholder="En branche" />
+                        <div class="sector-2">
+                        </div>
                     </div>
                     <div class="a-sector">
-                        <label for="sector-3">Branche</label>
-                        <input type="text" class="sector-3" name="sector-3" placeholder="En branche" />
+                        <div class="sector-3">
+                        </div>
                     </div>
                 </div>
 
@@ -115,19 +115,21 @@
                         <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                         <div class="m-tab-edu-single">
                             <label for="edu-line-1">Studieretning</label>
-                            <input type="text" class="a-tab-edu-single-line" name="edu-line-1" placeholder="Din studieretning" >
+                            <div class="a-tab-edu-single-line">
+                            </div>
 
                             <label for="edu-school-1">Skole</label>
-                            <input type="text" class="a-tab-edu-single-school" name="edu-school-1" placeholder="Institutionen du tog uddannelsen på" >
+                            <div class="a-tab-edu-single-school">
+                            </div>
 
                             <label for="edu-start-1">Start dato</label>
-                            <input type="date" class="a-tab-edu-single-start-date" name="edu-start-1" placeholder="Hvornår du startede denne uddannelse" >
+                            <div class="a-tab-edu-single-start-date">
+                            </div>
 
                             <label for="edu-end-1">Slut dato</label>
-                            <input type="date" class="a-tab-edu-single-end-date" name="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
+                            <div class="a-tab-edu-single-end-date">
+                            </div>
                         </div>
-
-                        <button class="a-tab-add-edu"></button> <!-- Skal have et ikon eller noget -->
                     </div>
 
                     <!-- CONTAINER FOR WORK -->
@@ -135,24 +137,22 @@
                         <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                         <div class="m-tab-work-single">
                             <label for="work-titel-1">Titel</label>
-                            <input type="text" class="a-tab-work-single-line" name="work-titel-1" placeholder="Din jobtitel fra dette arbejde" >
+                            <div class="a-tab-work-single-line">
+                            </div>
 
                             <label for="edu-company-1">Firma</label>
-                            <input type="text" class="a-tab-work-single-school" name="work-company-1" placeholder="Din arbejdsgiver fra dette arbejde" >
+                            <div class="a-tab-work-single-school">
+                            </div>
 
                             <label for="edu-start-1">Start dato</label>
-                            <input type="date" class="a-tab-work-single-start-date" name="work-start-1" placeholder="Hvornår du startede dette arbejde" >
+                            <div class="a-tab-work-single-start-date">
+                            </div>
 
                             <label for="edu-end-1">Slut dato</label>
-                            <input type="date" class="a-tab-work-single-end-date" name="work-end-1" placeholder="Hvornår du stoppede dette arbejde" >
+                            <div class="a-tab-work-single-end-date">
+                            </div>
                         </div>
-
-                        <button class="a-tab-add-work"></button> <!-- Skal have et ikon eller noget -->
                     </div>
                 </div>
-
-                <input type="submit" id="submit-button" value="Send"/>
-
-            </form>
         </main>
 </body>
