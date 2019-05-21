@@ -10,6 +10,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="styles/normalize.css" rel="stylesheet">
+    <script src="scripts/add-molecules.js" type="text/javascript" async>
+
+    </script>
     <title>NemCV - Skriv dine info</title>
 </head>
 <body>
@@ -86,7 +89,7 @@
                             Check boxes??
                         </div>
                     </div>
-                    <button class="a-tab-add-skill"></button> <!-- Skal have et ikon eller noget -->
+                    <button class="a-tab-add-skill" type="button">+</button> <!-- Skal have et ikon eller noget -->
                 </div>
 
                 <!-- MOLECULE FOR SECTORS -->
@@ -127,7 +130,7 @@
                             <input type="date" class="a-tab-edu-single-end-date" name="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
                         </div>
 
-                        <button class="a-tab-add-edu"></button> <!-- Skal have et ikon eller noget -->
+                        <button class="a-tab-add-edu" type="button" onclick="addNewEduMolecule()">+</button> <!-- Skal have et ikon eller noget -->
                     </div>
 
                     <!-- CONTAINER FOR WORK -->
@@ -147,7 +150,7 @@
                             <input type="date" class="a-tab-work-single-end-date" name="work-end-1" placeholder="Hvornår du stoppede dette arbejde" >
                         </div>
 
-                        <button class="a-tab-add-work"></button> <!-- Skal have et ikon eller noget -->
+                        <button class="a-tab-add-work" type="button">+</button> <!-- Skal have et ikon eller noget -->
                     </div>
                 </div>
 
