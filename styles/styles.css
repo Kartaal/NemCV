@@ -46,6 +46,7 @@ p{
 	color: var(--text-color);*/
 	color: black;
 	font-family: 'Roboto', sans-serif;
+	margin: auto;
 
 }
 
@@ -130,6 +131,7 @@ button{
 	width: 50%;
 	height: 5vh;
 	margin: auto;
+	display: flex;
 
 }
 
