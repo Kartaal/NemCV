@@ -1,3 +1,8 @@
+/*
+    JavaScript for getting sectors from server, making checkboxes
+        and limiting checkbox selection to max 3.
+*/
+
 //source: https://www.geeksforgeeks.org/html-dom-input-checkbox-property/
 async function loadBranches() {
   const response = await fetch('https://syst-api.azurewebsites.net/sectors');

@@ -78,9 +78,10 @@
                     </div>
                 </div>
 
-                <!-- MOLECULE FOR SKILLS -->
+                <!-- MOLECULE FOR SKILLS --><!--
                 <div class="m-skills">
                     <!-- SKILLS TO BE INSERTED HERE? HIDE IF NO SKILLS?? -->
+                    <!--
                     <div class="m-tab-skills-single">
                         <div class="a-tab-skills-single">
                             Kompetencer...
@@ -88,8 +89,8 @@
                             Check boxes??
                         </div>
                     </div>
-                    <button class="a-tab-add-skill" type="button">+</button> <!-- Skal have et ikon eller noget -->
-                </div>
+                    <button class="a-tab-add-skill" type="button">+</button> <!-- Skal have et ikon eller noget --> <!--
+                </div> -->
 
                 <!-- MOLECULE FOR SECTORS -->
                 <div class="m-sectors">
@@ -129,18 +130,18 @@
                             <input type="date" class="a-tab-edu-single-end-date" name="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
                         </div>
 
-                        <button class="a-tab-add-edu" type="button" onclick="addNewEduMolecule()">+</button> <!-- Skal have et ikon eller noget -->
+                        <button id="a-tab-add-edu" type="button" onclick="addNewEduMolecule()">+</button> <!-- Skal have et ikon eller noget -->
                     </div>
 
                     <!-- CONTAINER FOR WORK -->
                     <div class="m-work">
                         <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                         <div class="m-tab-work-single">
-                            <label for="work-titel-1">Titel</label>
-                            <input type="text" class="a-tab-work-single-line" name="work-titel-1" placeholder="Din jobtitel fra dette arbejde" >
+                            <label for="work-title-1">Titel</label>
+                            <input type="text" class="a-tab-work-single-title" name="work-title-1" placeholder="Din jobtitel fra dette arbejde" >
 
                             <label for="edu-company-1">Firma</label>
-                            <input type="text" class="a-tab-work-single-school" name="work-company-1" placeholder="Din arbejdsgiver fra dette arbejde" >
+                            <input type="text" class="a-tab-work-single-company" name="work-company-1" placeholder="Din arbejdsgiver fra dette arbejde" >
 
                             <label for="edu-start-1">Start dato</label>
                             <input type="date" class="a-tab-work-single-start-date" name="work-start-1" placeholder="Hvornår du startede dette arbejde" >
@@ -149,7 +150,7 @@
                             <input type="date" class="a-tab-work-single-end-date" name="work-end-1" placeholder="Hvornår du stoppede dette arbejde" >
                         </div>
 
-                        <button class="a-tab-add-work" type="button">+</button> <!-- Skal have et ikon eller noget -->
+                        <button id="a-tab-add-work" type="button" onclick="addNewWorkMolecule()">+</button> <!-- Skal have et ikon eller noget -->
                     </div>
                 </div>
 
