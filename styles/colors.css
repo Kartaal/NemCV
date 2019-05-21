@@ -2,9 +2,15 @@
 
 :root{
 	
-	--text: rgba(255,255,0,0.5);
-	--background: rgba(255,0,255,.5);
-	--button-one: rgba();
+	--text-header: black;
+	--text-color: white;
+	--button-color: #3B4663;
+
+	/* reserved for potenially other boxes 
 	--button-two: rgba();
+	*/
+
+	--drop-shadow-on-boxes: #B2BACD;
+	--border-color: #22293A;
 
 }
