@@ -23,6 +23,7 @@ async function loadBranches() {
   return json;
 }
 
+
 function onlyThreeChecked(){
     var checkboxgroup = document.getElementById("m-branches").getElementsByTagName("input");
     console.log(checkboxgroup);
@@ -39,4 +40,5 @@ function onlyThreeChecked(){
         return false;
       }
     }
+
 }

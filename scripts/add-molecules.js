@@ -5,8 +5,8 @@
 
 //Variables for keeping track of how many education, work and skill molecules exist
 var eduMoleculeCount = 1;
-var workCount = 1;
-var skillCount = 1;
+var workMoleculeCount = 1;
+var skillMoleculeCount = 1;
 
 function addNewEduMolecule() {
     //Up the count of molecules
