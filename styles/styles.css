@@ -51,7 +51,7 @@ p{
 }
 
 
-/* 2. container-flex klasse */ 
+/* 2. container-flex klasse */
 
 .main{
 
@@ -106,12 +106,27 @@ section.m-introduction-buttons-container{
 }
 
 
-div.a-entry-button,
-div.m-collapsible{
+div.a-entry-button{
 
 	width: 100%;
 	height: 5vh;
+}
 
+div.m-collapsible{
+	width: 100%;
+	height: 5vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.a-collapsible-text {
+  padding: 0 18px;
+	width: 38%;
+  display: none;
+  overflow: hidden;
+  background-color: #B2BACD;
 }
 
 .m-collapsible p{
@@ -135,6 +150,7 @@ button{
 
 }
 
+
 @media only screen and (max-width: 360px){
 
 	body{}
@@ -144,6 +160,5 @@ button{
 @media only screen and (max-width: ){
 
 	body{}
-	
-}
 
+}
