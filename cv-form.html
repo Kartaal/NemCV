@@ -31,16 +31,16 @@
 
                             <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
                             <div class="m-basic">
-                                <label for="name">Navn</label>
+                                <label for="name-input">Navn</label>
                                 <input type="text" id="name-input" class="name" name="name" placeholder="Dit fulde navn" />
 
                             </div>
                             <div class="a-basic-city">
-                                <label for="city">By</label>
+                                <label for="city-input">By</label>
                                 <input type="text" id="city-input" class="city" name="city" placeholder="Din by"/>
                             </div>
                             <div class="a-basic-misc-text">
-                                <label for="misc-text">Om dig</label>
+                                <label for="misc-text-input">Om dig</label>
                                 <textarea id="misc-text-input" class="misc-text" name="misc-text" placeholder="Noget fritekst om dig, så som interesser eller lignende"></textarea>
                             </div>
                         </div>
@@ -51,31 +51,31 @@
 
                         <!--    MOLECULE FOR IMAGE          -->
                         <div class="m-cv-image">
-                            <label for="image">Billede</label>
+                            <label for="image-input">Billede</label>
                             <input type="url" id="image-input" class="image" name="image" placeholder="URL til dit CV billede" />
                         </div>
 
                         <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
                         <div class="m-social">
                             <div class="a-social-age">
-                                <label for="age">Alder</label>
+                                <label for="age-input">Alder</label>
                                 <input type="number" id="age-input" class="age" name="age" placeholder="Din alder i år" min="15" max="120" />
                             </div>
                             Kontakt mig
                             <div class="a-social-email">
-                                <label for="email">E-mail</label>
+                                <label for="email-input">E-mail</label>
                                 <input type="email" id="email-input" class="email" name="email" placeholder="din@email.com" />
                             </div>
                             <div class="a-social-facebook">
-                                <label for="facebook">Facebook</label>
+                                <label for="facebook-input">Facebook</label>
                                 <input type="url" id="facebook-input" class="facebook" name="facebook" placeholder="Din Facebook" />
                             </div>
                             <div class="a-social-twitter">
-                                <label for="twitter">Twitter</label>
+                                <label for="twitter-input">Twitter</label>
                                 <input type="url" id="twitter-input" class="twitter" name="twitter" placeholder="Din Twitter"/>
                             </div>
                             <div class="a-social-linkedin">
-                                <label for="linkedin">LinkedIn</label>
+                                <label for="linkedin-input">LinkedIn</label>
                                 <input type="url" id="linkedin-input" class="linkedin" name="linkedin" placeholder="Din LinkedIn" />
                             </div>
                         </div>
@@ -121,16 +121,16 @@
                             <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                             <div class="m-tab-edu-single">
                                 <label for="edu-line-1">Studieretning</label>
-                                <input type="text" class="a-tab-edu-single-line" name="edu-line-1" placeholder="Din studieretning" >
+                                <input type="text" class="a-tab-edu-single-line" id="edu-line-1" placeholder="Din studieretning" >
 
                                 <label for="edu-school-1">Skole</label>
-                                <input type="text" class="a-tab-edu-single-school" name="edu-school-1" placeholder="Institutionen du tog uddannelsen på" >
+                                <input type="text" class="a-tab-edu-single-school" id="edu-school-1" placeholder="Institutionen du tog uddannelsen på" >
 
                                 <label for="edu-start-1">Start dato</label>
-                                <input type="date" class="a-tab-edu-single-start-date" name="edu-start-1" placeholder="Hvornår du startede denne uddannelse" >
+                                <input type="date" class="a-tab-edu-single-sstart-date" id="edu-start-1" placeholder="Hvornår du startede denne uddannelse" >
 
                                 <label for="edu-end-1">Slut dato</label>
-                                <input type="date" class="a-tab-edu-single-end-date" name="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
+                                <input type="date" class="a-tab-edu-single-end-date" id="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
                             </div>
 
                             <button id="a-tab-add-edu" type="button" onclick="addNewEduMolecule()">+</button> <!-- Skal have et ikon eller noget -->
@@ -141,16 +141,16 @@
                             <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                             <div class="m-tab-work-single">
                                 <label for="work-title-1">Titel</label>
-                                <input type="text" class="a-tab-work-single-title" name="work-title-1" placeholder="Din jobtitel fra dette arbejde" >
+                                <input type="text" class="a-tab-work-single-title" id="work-title-1" placeholder="Din jobtitel fra dette arbejde" >
 
-                                <label for="edu-company-1">Firma</label>
-                                <input type="text" class="a-tab-work-single-company" name="work-company-1" placeholder="Din arbejdsgiver fra dette arbejde" >
+                                <label for="work-company-1">Firma</label>
+                                <input type="text" class="a-tab-work-single-company" id="work-company-1" placeholder="Din arbejdsgiver fra dette arbejde" >
 
-                                <label for="edu-start-1">Start dato</label>
-                                <input type="date" class="a-tab-work-single-start-date" name="work-start-1" placeholder="Hvornår du startede dette arbejde" >
+                                <label for="work-start-1">Start dato</label>
+                                <input type="date" class="a-tab-work-single-start-date" id="work-start-1" placeholder="Hvornår du startede dette arbejde" >
 
-                                <label for="edu-end-1">Slut dato</label>
-                                <input type="date" class="a-tab-work-single-end-date" name="work-end-1" placeholder="Hvornår du stoppede dette arbejde" >
+                                <label for="work-end-1">Slut dato</label>
+                                <input type="date" class="a-tab-work-single-end-date" id="work-end-1" placeholder="Hvornår du stoppede dette arbejde" >
                             </div>
 
                             <button id="a-tab-add-work" type="button" onclick="addNewWorkMolecule()">+</button> <!-- Skal have et ikon eller noget -->
@@ -174,18 +174,18 @@
 
                     <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
                     <div class="m-basic">
-                        <label for="name">Navn</label>
-                        <div id="name-output" class="name">
+                        <label>Navn</label>
+                        <div id="name-out" class="name">
                         </div>
                     </div>
                     <div class="a-basic-city">
-                        <label for="city">By</label>
-                        <div id="city-output" class="city">
+                        <label>By</label>
+                        <div id="city-out" class="city">
                         </div>
                     </div>
                     <div class="a-basic-misc-text">
-                        <label for="misc-text">Om dig</label>
-                        <div id="misc-text-output" class="misc-text">
+                        <label>Om dig</label>
+                        <div id="misc-text-out" class="misc-text">
                         </div>
                     </div>
                 </div>
@@ -202,29 +202,29 @@
                 <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
                 <div class="m-social">
                     <div class="a-social-age">
-                        <label for="age">Alder</label>
-                        <div id="age-output" class="age">
+                        <label>Alder</label>
+                        <div id="age-out" class="age">
                         </div>
                     </div>
                     Kontakt mig
                     <div class="a-social-email">
-                        <label for="email">E-mail</label>
+                        <label>E-mail</label>
                         <div id="email-output" class="email">
                         </div>
                     </div>
                     <div class="a-social-facebook">
-                        <label for="facebook">Facebook</label>
-                        <div id="facebook-output" class="facebook" name="facebook">
+                        <label>Facebook</label>
+                        <div id="facebook-out" class="facebook">
                         </div>
                     </div>
                     <div class="a-social-twitter">
-                        <label for="twitter">Twitter</label>
-                        <div id="twitter-output" class="twitter">
+                        <label>Twitter</label>
+                        <div id="twitter-out" class="twitter">
                         </div>
                     </div>
                     <div class="a-social-linkedin">
-                        <label for="linkedin">LinkedIn</label>
-                        <div id="linkedin-output" class="linkedin">
+                        <label>LinkedIn</label>
+                        <div id="linkedin-out" class="linkedin">
                         </div>
                     </div>
                 </div>
@@ -266,19 +266,19 @@
 
                     <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                     <div class="m-tab-edu-single">
-                        <label for="edu-line-1">Studieretning</label>
+                        <label>Studieretning</label>
                         <div class="a-tab-edu-single-line">
                         </div>
 
-                        <label for="edu-school-1">Skole</label>
+                        <label>Skole</label>
                         <div class="a-tab-edu-single-school">
                         </div>
 
-                        <label for="edu-start-1">Start dato</label>
+                        <label>Start dato</label>
                         <div class="a-tab-edu-single-start-date">
                         </div>
 
-                        <label for="edu-end-1">Slut dato</label>
+                        <label>Slut dato</label>
                         <div class="a-tab-edu-single-end-date">
                         </div>
                     </div>
@@ -288,19 +288,19 @@
                 <div class="m-work">
                     <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                     <div class="m-tab-work-single">
-                        <label for="work-titel-1">Titel</label>
+                        <label>Titel</label>
                         <div class="a-tab-work-single-line">
                         </div>
 
-                        <label for="edu-company-1">Firma</label>
+                        <label>Firma</label>
                         <div class="a-tab-work-single-school">
                         </div>
 
-                        <label for="edu-start-1">Start dato</label>
+                        <label>Start dato</label>
                         <div class="a-tab-work-single-start-date">
                         </div>
 
-                        <label for="edu-end-1">Slut dato</label>
+                        <label>Slut dato</label>
                         <div class="a-tab-work-single-end-date">
                         </div>
                     </div>
