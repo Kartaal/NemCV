@@ -17,13 +17,13 @@
 /* 1. Properties for overordnet elementer/molekyler */
 
 
-@import 'styles/colors.css'
+@import "colors.css"
 
 
 body{
 
 	/*background-color: rgba(255,0,0,0.2);*/
-	background-color: var(--background);
+	background-color: rgba(var(--background));
 }
 
 
