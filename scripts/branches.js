@@ -19,7 +19,7 @@ async function loadBranches() {
     checkbox.onclick = onlyThreeChecked;
 
     var label = document.createElement("label");
-    label.htmlFor = "id";
+    //label.htmlFor = "id";
     label.appendChild(document.createTextNode(opt));
 
     select.appendChild(checkbox);
