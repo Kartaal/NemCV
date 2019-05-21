@@ -10,12 +10,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="styles/normalize.css" rel="stylesheet">
-    <script src="scripts/add-molecules.js" type="text/javascript" async>
-
-    </script>
+    <script src="scripts/add-molecules.js" type="text/javascript" async></script>
+    <script src="scripts/branches.js" type="text/javascript" async></script>
     <title>NemCV - Skriv dine info</title>
 </head>
-<body>
+<body onload = "loadBranches()">
         <!--       MAIN CONTAINER              -->
         <main class="main container-flex">
 
@@ -94,8 +93,8 @@
 
                 <!-- MOLECULE FOR SECTORS -->
                 <div class="m-sectors">
-                    <div class="a-sector">
-                        <!-- DET HER SKAL GØRES BEDRE, DROPDOWN??? -->
+                    <div class="a-sector" id="m-branches">
+                        <!-- DET HER SKAL GØRES BEDRE, DROPDOWN??? --><!--
                         <label for="sector-1">Branche</label>
                         <input type="text" class="sector-1" name="sector-1" placeholder="En branche" />
                     </div>
@@ -106,7 +105,7 @@
                     <div class="a-sector">
                         <label for="sector-3">Branche</label>
                         <input type="text" class="sector-3" name="sector-3" placeholder="En branche" />
-                    </div>
+                    </div> -->
                 </div>
 
                 <!--  CONTAINER FOR EDUCATION AND WORK EXPERIENCE  -->
