@@ -13,6 +13,7 @@
     <script src="scripts/add-molecules.js" type="text/javascript" async></script>
     <script src="scripts/branches.js" type="text/javascript" async></script>
     <script src="scripts/serverValidation.js" type="text/javascript" async></script>
+    <script src="scripts/pic-check.js" type="text/javascript" async></script>
     <title>NemCV - Skriv dine info</title>
 </head>
 <body onload="loadBranches()">
@@ -53,7 +54,7 @@
                         <!--    MOLECULE FOR IMAGE          -->
                         <div class="m-cv-image">
                             <label for="image-input">Billede</label>
-                            <input type="url" id="image-input" class="image" name="image" placeholder="URL til dit CV billede" />
+                            <input type="url" id="image-input" class="image" name="image" placeholder="URL til dit CV billede" onblur="checkurl();" />
                         </div>
 
                         <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
