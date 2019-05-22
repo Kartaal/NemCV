@@ -10,6 +10,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="styles/normalize.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/CV-styles.css" rel="stylesheet">
     <script src="scripts/add-molecules.js" type="text/javascript" async></script>
     <script src="scripts/branches.js" type="text/javascript" async></script>
     <script src="scripts/serverValidation.js" type="text/javascript" async></script>
@@ -24,7 +26,8 @@
             <main class="main container-flex">
 
                 <form action="" method="POST" id="cv-form">
-
+                  <h1 class = "a-titles">Udfyld dit CV</h1>
+                  <h2 class = "a-titles">Omkring dig</h2>
                     <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
                     <div class="t-basic-social">
 
@@ -32,51 +35,53 @@
                         <div class="t-basic">
 
                             <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
-                            <div class="m-basic">
-                                <label for="name-input">Navn</label>
+                            <div class="a-basic">
+                                <label for="name-input" >Navn</label>
                                 <input type="text" id="name-input" class="name" name="name" placeholder="Dit fulde navn" />
 
                             </div>
-                            <div class="a-basic-city">
+                            <div class="a-basic" id = "a-basic-city">
                                 <label for="city-input">By</label>
                                 <input type="text" id="city-input" class="city" name="city" placeholder="Din by"/>
                             </div>
-                            <div class="a-basic-misc-text">
+                            <div class="a-basic" id = "a-basic-misc-text">
                                 <label for="misc-text-input">Om dig</label>
                                 <textarea id="misc-text-input" class="misc-text" name="misc-text" placeholder="Noget fritekst om dig, så som interesser eller lignende"></textarea>
                             </div>
                         </div>
+
+                            <!--    MOLECULE FOR IMAGE          -->
+                            <div class="m-cv-image">
+                                <label for="image-input">Billede</label>
+                                <input type="url" id="image-input" class="image" name="image" placeholder="URL til dit CV billede" onblur="checkurl();" />
+                            </div>
+
+
+                                <div class="a-social">
+                                    <label for="age-input">Alder</label>
+                                    <input type="number" id="age-input" class="age" name="age" placeholder="Din alder i år" min="15" max="120" />
+                                </div>
+
                     </div>
 
                     <!--  CONTAINER FOR CV IMAGE, E-MAIL AND SOCIAL MEDIA LINKS   -->
-                    <div class="t-img-social">
-
-                        <!--    MOLECULE FOR IMAGE          -->
-                        <div class="m-cv-image">
-                            <label for="image-input">Billede</label>
-                            <input type="url" id="image-input" class="image" name="image" placeholder="URL til dit CV billede" onblur="checkurl();" />
-                        </div>
-
-                        <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
-                        <div class="m-social">
-                            <div class="a-social-age">
-                                <label for="age-input">Alder</label>
-                                <input type="number" id="age-input" class="age" name="age" placeholder="Din alder i år" min="15" max="120" />
-                            </div>
-                            Kontakt mig
-                            <div class="a-social-email">
+                    <div class="t-social">
+                      <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
+                      <div class="m-social">
+                            <h2 class = "a-titles">Kontakt mig</h2>
+                            <div class="a-social" id = "a-social-email">
                                 <label for="email-input">E-mail</label>
                                 <input type="email" id="email-input" class="email" name="email" placeholder="din@email.com" />
                             </div>
-                            <div class="a-social-facebook">
+                            <div class="a-social" id = "a-social-facebook">
                                 <label for="facebook-input">Facebook</label>
                                 <input type="url" id="facebook-input" class="facebook" name="facebook" placeholder="Din Facebook" />
                             </div>
-                            <div class="a-social-twitter">
+                            <div class="a-social" id = "a-social-twitter">
                                 <label for="twitter-input">Twitter</label>
                                 <input type="url" id="twitter-input" class="twitter" name="twitter" placeholder="Din Twitter"/>
                             </div>
-                            <div class="a-social-linkedin">
+                            <div class="a-social" id = "a-social-linkedin">
                                 <label for="linkedin-input">LinkedIn</label>
                                 <input type="url" id="linkedin-input" class="linkedin" name="linkedin" placeholder="Din LinkedIn" />
                             </div>
@@ -98,7 +103,11 @@
                     </div> -->
 
                     <!-- MOLECULE FOR SECTORS -->
+                    <h2 class = "a-titles">Tidligere erfaring</h2>
+
+                    <label for="">Brancher</label>
                     <div class="m-sectors" id="m-branches">
+
                         <!-- <div class="a-sector">
                             <!-- DET HER SKAL GØRES BEDRE, DROPDOWN??? --><!--
                             <label for="sector-1">Branche</label>
@@ -113,7 +122,7 @@
                             <input type="text" class="sector-3" name="sector-3" placeholder="En branche" />
                         </div> -->
                     </div>
-
+                    <h3 class = "a-titles"> Udannelse</h3>
                     <!--  CONTAINER FOR EDUCATION AND WORK EXPERIENCE  -->
                     <div class="t-edu-work">
 
@@ -135,9 +144,10 @@
                                 <input type="date" class="a-tab-edu-single-end-date" id="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
                             </div>
 
-                            <button id="a-tab-add-edu" type="button" onclick="addNewEduMolecule()">+</button> <!-- Skal have et ikon eller noget -->
+                            <button class = "a-tab-add-molecule" id="a-tab-add-edu" type="button" onclick="addNewEduMolecule()">+</button> <!-- Skal have et ikon eller noget -->
                         </div>
 
+                        <h3 class = "a-titles">Erhvervserfaring</h3>
                         <!-- CONTAINER FOR WORK -->
                         <div class="m-work">
                             <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
@@ -155,17 +165,19 @@
                                 <input type="date" class="a-tab-work-single-end-date" id="work-end-1" placeholder="Hvornår du stoppede dette arbejde" >
                             </div>
 
-                            <button id="a-tab-add-work" type="button" onclick="addNewWorkMolecule()">+</button> <!-- Skal have et ikon eller noget -->
+                            <button class = "a-tab-add-molecule" id="a-tab-add-work" type="button" onclick="addNewWorkMolecule()">+</button> <!-- Skal have et ikon eller noget -->
                         </div>
                     </div>
 
-                    <input type="submit" id="submit-button" onclick="remoteValidate(event)" value="Send"/>
+                    <input type="submit" class = "submit-button" id="submit-button" onclick="remoteValidate(event)" value="Send"/>
 
                 </form>
             </main>
         </div>
 
+        <section>
         <!--  Page for adding all the CV data and displaying it   -->
+
         <div id="out-page">
 
             <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
@@ -309,4 +321,6 @@
                 </div>
             </div>
         </div>
+        </section>
+
 </body>

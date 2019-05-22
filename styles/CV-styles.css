@@ -1,0 +1,142 @@
+/* Indholdfortegnelse:
+
+	1. Overskrifter
+	2. div'er
+	3. input
+	4. pressable ting
+	5. labels
+	6.
+	7.
+	8.
+	9.
+	10.
+	11.
+
+  */
+
+/* 1 */
+h1{
+	display: flex;
+	justify-content: center;
+	font-size: 60px;
+}
+h2{
+	font-size: 50px;
+}
+h3{
+	font-size: 40px;
+}
+.a-titles{
+	font-family: 'Roboto', sans-serif;
+}
+
+/* 2 */
+div{
+	margin-bottom: 20px;
+}
+
+.a-basic, .a-social{
+	display: flex;
+	flex-direction: column;
+}
+
+.t-basic-social, .t-img-social, .m-sectors{
+	margin-bottom: 70px;
+}
+.m-tab-edu-single, .m-tab-work-single {
+	display: flex;
+	flex-direction: column;
+}
+
+.m-sectors{
+	display: flex;
+	flex-direction: column;
+	max-height: 500px;
+	flex-wrap: wrap;
+}
+.m-sector-container{
+	margin-bottom: 10px;
+}
+/* 3 */
+input{
+	font-family: 'Roboto', sans-serif;
+	font-size: 30px;
+	border-color: WHITE;
+	border-radius: 5px;
+
+}
+
+/* 4 */
+.a-tab-add-molecule{
+	background-color: var(--button-hover-color);
+	border: solid 1.2px var(--border-hover-color);
+	justify-content: center;
+	font-size: 3em;
+	width: 20%;
+	max-height: 4vh;
+	cursor: pointer;
+	margin-bottom: 30px;
+
+}
+
+.a-tab-add-molecule:hover{
+	background-color: var(--button-hover-color);
+	border: solid 1.2px var(--border-hover-color);
+}
+
+.submit-button{
+	background-color: var(--button-color);
+	border: solid 1.2px var(--border-color);
+	color: var(--text-color);
+	font-size: 2em;
+	font-family: 'Roboto', sans-serif;
+	border-radius: 5px;
+	width: 20%;
+	height: 5vh;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+/* 5 */
+label{
+	background-color: var(--button-color);
+	color: var(--text-color);
+	font-family: 'Roboto', sans-serif;
+	font-size: 2.3em;
+	padding: 1px;
+	border-radius: 5px;
+	min-width: 100%;
+	height: 4vh;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	margin-bottom: 2px;
+}
+
+.a-label-checkbox{
+	font-size: 1.7em;
+	background-color: WHITE;
+	color: BLACK;
+	display: inline;
+}
+
+section{
+	display:none;
+}
+
+@media only screen and (max-width: 375px){
+
+	label{
+		font-size: 120px;
+	}
+	body{}
+
+}
+
+@media only screen and (max-width: ){
+
+	body{}
+
+}
