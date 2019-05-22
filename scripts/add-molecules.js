@@ -1,18 +1,17 @@
 /*
-    JavaScript for adding more molecules to education, work and skills
+    JavaScript for adding more molecules to education and work
       when corresponding button is pressed.
 */
 
-//Variables for keeping track of how many education, work and skill molecules exist
+//Variables for keeping track of how many education and work molecules exist
 var eduMoleculeCount = 1;
 var workMoleculeCount = 1;
-var skillMoleculeCount = 1;
 
 function addNewEduMolecule() {
     //Up the count of molecules
     eduMoleculeCount++;
     //Keeping track of the add education button
-    const addButton = document.getElementsByClassName("a-tab-add-edu")[0];
+    const addButton = document.getElementById("a-tab-add-edu");
 
     //Make a new container molecule, with attributes
     const eduSingleContainer = document.createElement("div");
@@ -108,4 +107,107 @@ function addNewEduMolecule() {
     eduSingleContainer.appendChild(textNode);
 
     addButton.parentElement.insertBefore(eduSingleContainer, addButton);
+}
+
+
+function addNewWorkMolecule() {
+    //Up the count of molecules
+    workMoleculeCount++;
+    //Keeping track of the add work button
+    const addButton = document.getElementById("a-tab-add-work");
+
+    //Make a new container molecule, with attributes
+    const workSingleContainer = document.createElement("div");
+    workSingleContainer.classList.add("m-tab-work-single");
+
+    //Make a new label atom for title, with attributes and content
+    const titleLabel = document.createElement("label");
+    titleLabel.setAttribute("for", "work-title-"+workMoleculeCount);
+    titleLabel.textContent = "Titel";
+
+    //Make a new input atom for title, with attributes
+    const titleInput = document.createElement("input");
+    titleInput.setAttribute("type", "text");
+    titleInput.classList.add("a-tab-work-single-title");
+    titleInput.setAttribute("name", "work-title-"+workMoleculeCount);
+    titleInput.setAttribute("placeholder", "Din jobtitel fra dette arbejde");
+
+    //Text node for reuse to ensure that created atoms look exactly like the static HTML variant
+    let textNode = document.createTextNode(" ");
+
+    //Append the title atoms to the container molecule
+    workSingleContainer.appendChild(titleLabel);
+    workSingleContainer.appendChild(textNode);
+
+    textNode = document.createTextNode(" ");
+
+    workSingleContainer.appendChild(titleInput);
+    workSingleContainer.appendChild(textNode);
+
+    //Make a new label atom for company, with attributes and content
+    const companyLabel = document.createElement("label");
+    companyLabel.setAttribute("for", "work-company-"+workMoleculeCount);
+    companyLabel.textContent = "Firma";
+
+    //Make a new input atom for company, with attributes
+    const companyInput = document.createElement("input");
+    companyInput.setAttribute("type", "text");
+    companyInput.classList.add("a-tab-work-single-company");
+    companyInput.setAttribute("name", "work-company-"+workMoleculeCount);
+    companyInput.setAttribute("placeholder", "Din arbejdsgiver fra dette arbejde");
+
+    textNode = document.createTextNode(" ");
+    //Append the company atoms to the container molecule
+    workSingleContainer.appendChild(companyLabel);
+    workSingleContainer.appendChild(textNode);
+
+    textNode = document.createTextNode(" ");
+
+    workSingleContainer.appendChild(companyInput);
+    workSingleContainer.appendChild(textNode);
+
+    //Make a new label atom for start date, with attributes and content
+    const startLabel = document.createElement("label");
+    startLabel.setAttribute("for", "work-start-"+workMoleculeCount);
+    startLabel.textContent = "Start dato";
+
+    //Make a new input atom for start date, with attributes
+    const startInput = document.createElement("input");
+    startInput.setAttribute("type", "date");
+    startInput.classList.add("a-tab-work-single-start-date");
+    startInput.setAttribute("name", "work-start-"+workMoleculeCount);
+    startInput.setAttribute("placeholder", "Hvornår du startede dette arbejde");
+
+    textNode = document.createTextNode(" ");
+    //Append the start date atoms to the container molecule
+    workSingleContainer.appendChild(startLabel);
+    workSingleContainer.appendChild(textNode);
+
+    textNode = document.createTextNode(" ");
+
+    workSingleContainer.appendChild(startInput);
+    workSingleContainer.appendChild(textNode);
+
+    //Make a new label atom for end date, with attributes and content
+    const endLabel = document.createElement("label");
+    endLabel.setAttribute("for", "work-end-"+workMoleculeCount);
+    endLabel.textContent = "Slut dato";
+
+    //Make a new input atom for end date, with attributes
+    const endInput = document.createElement("input");
+    endInput.setAttribute("type", "date");
+    endInput.classList.add("a-tab-work-single-end-date");
+    endInput.setAttribute("name", "work-end-"+workMoleculeCount);
+    endInput.setAttribute("placeholder", "Hvornår du stoppede dette arbejde");
+
+    textNode = document.createTextNode(" ");
+    //Append the end date atoms to the container molecule
+    workSingleContainer.appendChild(endLabel);
+    workSingleContainer.appendChild(textNode);
+
+    textNode = document.createTextNode(" ");
+    workSingleContainer.appendChild(endInput);
+    workSingleContainer.appendChild(textNode);
+
+    addButton.parentElement.insertBefore(workSingleContainer, addButton);
 }
