@@ -15,11 +15,12 @@ async function loadBranches() {
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.name = opt;
+    checkbox.classList.add("sector");
     checkbox.value = opt;
     checkbox.onclick = onlyThreeChecked;
 
     var label = document.createElement("label");
-    label.htmlFor = "id";
+    //label.htmlFor = "id";
     label.appendChild(document.createTextNode(opt));
 
     select.appendChild(checkbox);
@@ -31,7 +32,6 @@ async function loadBranches() {
 
 function onlyThreeChecked(){
     var checkboxgroup = document.getElementById("m-branches").getElementsByTagName("input");
-    console.log(checkboxgroup);
     var total = 0;
     var currentCheckbox = event.srcElement;
     var currentIndex = 0;

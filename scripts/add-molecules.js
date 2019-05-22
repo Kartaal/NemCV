@@ -13,8 +13,6 @@ function addNewEduMolecule() {
     //Keeping track of the add education button
     const addButton = document.getElementById("a-tab-add-edu");
 
-    console.log("Edit button " + addButton);
-
     //Make a new container molecule, with attributes
     const eduSingleContainer = document.createElement("div");
     eduSingleContainer.classList.add("m-tab-edu-single");
@@ -117,8 +115,6 @@ function addNewWorkMolecule() {
     workMoleculeCount++;
     //Keeping track of the add work button
     const addButton = document.getElementById("a-tab-add-work");
-
-    console.log("Work button: " + addButton);
 
     //Make a new container molecule, with attributes
     const workSingleContainer = document.createElement("div");
