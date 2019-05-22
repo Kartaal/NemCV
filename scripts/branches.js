@@ -15,6 +15,7 @@ async function loadBranches() {
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.name = opt;
+    checkbox.classList.add("sector");
     checkbox.value = opt;
     checkbox.onclick = onlyThreeChecked;
 
@@ -31,7 +32,6 @@ async function loadBranches() {
 
 function onlyThreeChecked(){
     var checkboxgroup = document.getElementById("m-branches").getElementsByTagName("input");
-    console.log(checkboxgroup);
     var total = 0;
 
     for(var i = 0; i < checkboxgroup.length; i++){

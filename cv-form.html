@@ -12,6 +12,7 @@
     <link href="styles/normalize.css" rel="stylesheet">
     <script src="scripts/add-molecules.js" type="text/javascript" async></script>
     <script src="scripts/branches.js" type="text/javascript" async></script>
+    <script src="scripts/serverValidation.js" type="text/javascript" async></script>
     <title>NemCV - Skriv dine info</title>
 </head>
 <body onload="loadBranches()">
@@ -127,7 +128,7 @@
                                 <input type="text" class="a-tab-edu-single-school" id="edu-school-1" placeholder="Institutionen du tog uddannelsen på" >
 
                                 <label for="edu-start-1">Start dato</label>
-                                <input type="date" class="a-tab-edu-single-sstart-date" id="edu-start-1" placeholder="Hvornår du startede denne uddannelse" >
+                                <input type="date" class="a-tab-edu-single-start-date" id="edu-start-1" placeholder="Hvornår du startede denne uddannelse" >
 
                                 <label for="edu-end-1">Slut dato</label>
                                 <input type="date" class="a-tab-edu-single-end-date" id="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
@@ -157,7 +158,7 @@
                         </div>
                     </div>
 
-                    <input type="submit" id="submit-button" value="Send"/>
+                    <input type="submit" id="submit-button" onclick="remoteValidate(event)" value="Send"/>
 
                 </form>
             </main>
