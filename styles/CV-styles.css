@@ -79,14 +79,10 @@ input{
 
 }
 
-.a-tab-add-molecule:hover{
-	background-color: var(--button-hover-color);
-	border: solid 1.2px var(--border-hover-color);
-}
 
 .submit-button{
-	background-color: var(--button-color);
-	border: solid 1.2px var(--border-color);
+	background-color: var(--submit-hover-color);
+	border: solid 1.2px var(--border-submit-hover-color);
 	color: var(--text-color);
 	font-size: 2em;
 	font-family: 'Roboto', sans-serif;
@@ -126,13 +122,37 @@ section{
 	display:none;
 }
 
-@media only screen and (max-width: 375px){
+@media only screen and (max-width: 375px), (min-width: 376px){
+
+	input{
+		font-size: 15px;
+	}
+
+	.a-tab-add-molecule{
+		font-size: 1.5em;
+		max-height: 5vh;
+		background-color: var(--button-color);
+		border: solid 1.2px var(--border-color);
+	}
+	.a-tab-add-molecule:hover{
+		background-color: var(--button-hover-color);
+		border: solid 1.2px var(--border-hover-color);
+	}
+
+	.submit-button{
+		background-color: var(--button-color);
+		border: solid 1.2px var(--border-color);
+		font-size: 1em;
+	}
+	.submit-button:hover{
+		background-color: var(--submit-hover-color);
+		border: solid 1.2px var(--border-submit-hover-color);
+	}
 
 	label{
-		font-size: 120px;
+		font-size: 1.5em;
+		height: 5vh;
 	}
-	body{}
-
 }
 
 @media only screen and (max-width: ){
