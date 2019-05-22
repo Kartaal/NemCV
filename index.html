@@ -8,44 +8,65 @@
 <html lang="da">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <!-- Set device viewport and scale -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Reset all the normal webbrowser CSS properties -->
     <link href="styles/normalize.css" rel="stylesheet">
+
+    <!-- Overall stylesheet for the website -->
+    <link href="styleindex.css" rel="stylesheet">
+
+    <!-- Flexboxgrid CSS import -->
+    <link href="styles/flexboxgrid.css" rel="stylesheet">
+
+    <!-- Google fonts import -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src = "scripts/index.js">  </script>
 </head>
-<body>
+<body onload = "collapsible()">
         <!--       MAIN CONTAINER              -->
         <main class="main container-flex">
             <!--    INTRODUCTORY TEXT     -->
-            Velkommen til NEMCV
+            <section class="m-introduction-text">
+                    <div class="a-introduction-container">
+                        <h1 class="a-introduction-text-header">Velkommen til NEMCV</h1>
+                    </div>
+            </section>
 
-            <!--     Entry button to access CV page       -->
-            <div class="a-entry-button">
-                <button>
-                    Kom i gang
-                </button>
-            </div>
 
-            <!--   EXPLANATORY COLLAPSIBLE    -->
-            <div class="m-collapsible">
-                <div class="a-collapsible-header">
-                    Omkring NEMCV
+            <section class="m-introduction-buttons-container">
+                <!--     Entry button to access CV page       -->
+                <div class="a-entry-button">
+                    <button onclick="location.href='cv-form.html'" type="button">
+                        <p>Kom i gang</p>
+                    </button>
                 </div>
-                <div class="a-collapsible-text">
-                </div>
-            </div>
 
-            <!--      HOW TO USE COLLAPSIBLE                  -->
-            <div class="m-collapsible">
-                <div class="a-collapsible-header">
-                    Hvordan fungerer det?
+                <!--   EXPLANATORY COLLAPSIBLE    -->
+                <div class="m-collapsible">
+                    <button type="button" class = "a-collapsible-button">Omkring NEMCV</button>
+                    <div class="a-collapsible-text">
+                      <p>Her vil der stå en fin tekst omkring NEMCV. Sikke en fin tekst</p>
+                    </div>
                 </div>
-                <div class="a-collapsible-text">
-                </div>
-            </div>
 
-            <!--     Entry button to access CV page       -->
-            <div class="a-entry-button">
-                <button>
-                    Kom i gang
-                </button>
-            </div>
+                <!--      HOW TO USE COLLAPSIBLE                  -->
+                <div class="m-collapsible">
+                    <button type="button" class = "a-collapsible-button">Hvordan fungerer det?</button>
+                    <div class="a-collapsible-text">
+                      <p>En forklaring af hvordan det her nemcv egentlig fungere. Hvis det gør</p>
+                    </div>
+                </div>
+
+                <!--     Entry button to access CV page       -->
+                <div class="a-entry-button">
+                    <button onclick="location.href='cv-form.html'" type="button">
+                        <p>Kom i gang</p>
+                    </button>
+                </div>
+            </section>
         </main>
 </body>
