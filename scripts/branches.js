@@ -15,12 +15,13 @@ async function loadBranches() {
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.name = opt;
+    checkbox.id = "sector-"+i;
     checkbox.classList.add("sector");
     checkbox.value = opt;
     checkbox.onclick = onlyThreeChecked;
 
     var label = document.createElement("label");
-    //label.htmlFor = "id";
+    label.htmlFor = "sector-"+i;
     label.appendChild(document.createTextNode(opt));
 
     select.appendChild(checkbox);
