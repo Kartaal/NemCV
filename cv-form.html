@@ -28,17 +28,17 @@
             <main class="main container-flex">
 
                 <form action="" method="POST" id="cv-form">
-                  <h1 class = "a-titles">Udfyld dit</h1>
+                  <h1 class = "a-titles container-flex">Udfyld dit</h1>
                   <img src="img/NemCV.svg" alt="NEMCV">
                   <h2 class = "a-titles">Omkring dig</h2>
                     <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
-                    <div class="t-basic-social">
+                    <div class="t-basic-social" >
 
                         <!--   CONTAINER FOR NAME, CITY AND MISC INFO    -->
                         <div class="t-basic">
 
                             <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
-                            <div class="a-basic">
+                            <div class="a-basic container-flex">
                                 <label for="name-input" >Navn</label>
                                 <input type="text" id="name-input" class="name" name="name" placeholder="Dit fulde navn" />
 
@@ -68,9 +68,9 @@
                     </div>
 
                     <!--  CONTAINER FOR CV IMAGE, E-MAIL AND SOCIAL MEDIA LINKS   -->
-                    <div class="t-social">
+                    <div class="t-social container-flex">
                       <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
-                      <div class="m-social">
+                      <div class="m-social container-flex">
                             <h2 class = "a-titles">Kontakt mig</h2>
                             <div class="a-social" id = "a-social-email">
                                 <label for="email-input">E-mail</label>
@@ -106,10 +106,10 @@
                     </div> -->
 
                     <!-- MOLECULE FOR SECTORS -->
-                    <h2 class = "a-titles">Tidligere erfaring</h2>
+                    <h2 class = "a-titles container-flex">Tidligere erfaring</h2>
 
                     <label for="">Brancher</label>
-                    <div class="m-sectors" id="m-branches">
+                    <div class="m-sectors container-flex" id="m-branches">
 
                         <!-- <div class="a-sector">
                             <!-- DET HER SKAL GØRES BEDRE, DROPDOWN??? --><!--
@@ -134,25 +134,19 @@
 
                             <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                             <div class="m-tab-edu-single">
-                                <div class="m-edu-input">
+
                                   <label for="edu-line-1">Studieretning</label>
-                                  <input type="text" class="a-tab-edu-single-line" id="edu-line-1" placeholder="Din studieretning" >
-                                </div>
+                                  <input type="text" class="a-tab-edu-single" id="edu-line-1" placeholder="Din studieretning" >
 
-                                <div class="m-edu-input">
                                   <label for="edu-school-1">Skole</label>
-                                  <input type="text" class="a-tab-edu-single-school" id="edu-school-1" placeholder="Institutionen du tog uddannelsen på" >
-                                </div>
+                                  <input type="text" class="a-tab-edu-single" id="edu-school-1" placeholder="Institutionen du tog uddannelsen på" >
 
-                                <div class="m-edu-input">
                                   <label for="edu-start-1">Start dato</label>
-                                  <input type="date" class="a-tab-edu-single-start-date" id="edu-start-1" placeholder="Hvornår du startede denne uddannelse" >
-                                </div>
+                                  <input type="date" class="a-tab-edu-single" id="edu-start-1" placeholder="Hvornår du startede denne uddannelse" >
 
-                                <div class="m-edu-input">
                                   <label for="edu-end-1">Slut dato</label>
-                                  <input type="date" class="a-tab-edu-single-end-date" id="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
-                                </div>
+                                  <input type="date" class="a-tab-edu-single" id="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
+
 
                             </div>
 
@@ -165,16 +159,16 @@
                             <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                             <div class="m-tab-work-single">
                                 <label for="work-title-1">Titel</label>
-                                <input type="text" class="a-tab-work-single-title" id="work-title-1" placeholder="Din jobtitel fra dette arbejde" >
+                                <input type="text" class="a-tab-work-single" id="work-title-1" placeholder="Din jobtitel fra dette arbejde" >
 
                                 <label for="work-company-1">Firma</label>
-                                <input type="text" class="a-tab-work-single-company" id="work-company-1" placeholder="Din arbejdsgiver fra dette arbejde" >
+                                <input type="text" class="a-tab-work-single" id="work-company-1" placeholder="Din arbejdsgiver fra dette arbejde" >
 
                                 <label for="work-start-1">Start dato</label>
-                                <input type="date" class="a-tab-work-single-start-date" id="work-start-1" placeholder="Hvornår du startede dette arbejde" >
+                                <input type="date" class="a-tab-work-single" id="work-start-1" placeholder="Hvornår du startede dette arbejde" >
 
                                 <label for="work-end-1">Slut dato</label>
-                                <input type="date" class="a-tab-work-single-end-date" id="work-end-1" placeholder="Hvornår du stoppede dette arbejde" >
+                                <input type="date" class="a-tab-work-single" id="work-end-1" placeholder="Hvornår du stoppede dette arbejde" >
                             </div>
 
                             <button class = "a-tab-add-molecule" id="a-tab-add-work" type="button" onclick="addNewWorkMolecule()">+</button> <!-- Skal have et ikon eller noget -->
