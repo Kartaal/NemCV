@@ -1,93 +1,167 @@
 /*
     Script for validating form data via https://syst-api.azurewebsites.net/cv
+      and after validation adding the data to out-page where appropriate.
 */
 
-//Returns an elment based on ID
-function getElement(identity){ 
-    return document.getElementById(identity)
+//Returns an element based on ID
+function getElement(identity){
+    return document.getElementById(identity);
 }
 
-//Edits the inline value of the element (Using getElment("ElementID"))
-function apply(identity, v){ 
-    identity.innerHTML = v
+//Edits the inline value of the element (Using getElement("ElementID"))
+function apply(identity, v) {
+    identity.innerHTML = v;
 }
 
 //Adds a new Work molecule to the Actual CV
-// Parameters: Title, Start date, end date, 
-function newActualWorkMolecule(json, count){
+// Parameters: Title, Start date, end date,
+function newActualWorkMolecule(json){
 
     const actualContainer = document.createElement("div");
-    actualContainer.classList.add("ac-workplace-"+count);
+    actualContainer.classList.add("m-tab-edu-single");
 
+    const header = document.createElement("h3");
+    header.classList.add("a-titles");
+    header.innerHTML = "Erhvervserfaring";
 
     const titleLabel = document.createElement("label");
-    //titleLabel.setAttribute("for");
-    titleLabel.textContent = "Job";
+    titleLabel.textContent = "Titel";
 
-    const titleParagraph = document.createElement("p");
+    const titleParagraph = document.createElement("span");
     titleParagraph.innerHTML = json.title;
 
-    const firmParagraph = document.createElement("p");
+    const firmLabel = document.createElement("label");
+    firmLabel.textContent = "Firma";
+
+    const firmParagraph = document.createElement("span");
     firmParagraph.innerHTML = json.name;
-    
-    const timeParagraph = document.createElement("p");
+
+    const timeLabel = document.createElement("label");
+    timeLabel.textContent = "Periode";
+
+    if(json.to === "") {
+        json.to = "nu";
+    }
+
+    /* An attempt at changing the formatting of the date string from input
+    const fromArray = json.from.split("-");
+    const date = new Date(Number(fromArray[0]), Number(fromArray[1]), Number(fromArray[2]));
+    */
+
+    const timeParagraph = document.createElement("span");
     timeParagraph.innerHTML = json.from + " - " + json.to;
-    
+
+    actualContainer.appendChild(header);
     actualContainer.appendChild(titleLabel);
     actualContainer.appendChild(titleParagraph);
+    actualContainer.appendChild(firmLabel);
     actualContainer.appendChild(firmParagraph);
+    actualContainer.appendChild(timeLabel);
     actualContainer.appendChild(timeParagraph);
-    
+
     getElement("m-work").appendChild(actualContainer);
 }
 
-function newActualEduMolecule(json, count){
+function newActualEduMolecule(json){
 
-    //THERE IS A BIG IN THIS PART OF THE PROGRAM
-    //IF THERE IS NO ACUTAL JOB MOLECULES, IT FAILS TO EXECUTE.
-    //UNSURE WHY THO.
     const actualContainer = document.createElement("div");
-    actualContainer.classList.add("ac-education-"+count);
+    actualContainer.classList.add("m-tab-edu-single");
 
+    const header = document.createElement("h3");
+    header.classList.add("a-titles");
+    header.innerHTML = "Uddannelse";
 
-    const titleLabel = document.createElement("label");
-    //titleLabel.setAttribute("for");
-    titleLabel.textContent = "Education";
+    const lineLabel = document.createElement("label");
+    lineLabel.textContent = "Studieretning";
 
-    const titleParagraph = document.createElement("p");
-    titleParagraph.innerHTML = json.title;
+    const lineParagraph = document.createElement("span");
+    lineParagraph.innerHTML = json.title;
 
-    const eduParagraph = document.createElement("p");
+    const eduLabel = document.createElement("label");
+    eduLabel.textContent = "Skole";
+
+    const eduParagraph = document.createElement("span");
     eduParagraph.innerHTML = json.name;
-    
-    const timeParagraph = document.createElement("p");
+
+    const timeLabel = document.createElement("label");
+    timeLabel.textContent = "Periode";
+
+    if(json.to === "") {
+        json.to = "nu";
+    }
+
+    const timeParagraph = document.createElement("span");
     timeParagraph.innerHTML = json.from + " - " + json.to;
-    
-    actualContainer.appendChild(titleLabel);
-    actualContainer.appendChild(titleParagraph);
+
+    actualContainer.appendChild(header);
+    actualContainer.appendChild(lineLabel);
+    actualContainer.appendChild(lineParagraph);
+    actualContainer.appendChild(eduLabel);
     actualContainer.appendChild(eduParagraph);
+    actualContainer.appendChild(timeLabel);
     actualContainer.appendChild(timeParagraph);
-    
+
     getElement("m-edu").appendChild(actualContainer);
 }
 
-function newActualSector(json, count){
-    const actualContainer = document.createElement("div");
-    actualContainer.classList.add("ac-sector-"+count);
+function newActualSector(json){
+    const actualContainer = document.createElement("span");
+    actualContainer.classList.add("a-sector-");
+    actualContainer.textContent = json;
 
-    const titleLabel = document.createElement("label");
-    //titleLabel.setAttribute("for");
-    titleLabel.textContent = "Sector: " + json;
-    actualContainer.appendChild(titleLabel);
-    
     getElement("m-sectors").appendChild(actualContainer);
-
 }
 
-//Validates an Image Input value for a valid URL that leads to an image. 
+//Sets up the label for sectors, if any were chosen
+function setupSectors() {
+    const titleLabel = document.createElement("label");
+    titleLabel.classList.add("m-sector-title");
+    titleLabel.innerHTML = "Brancher";
+
+    const sectorsContainer = getElement("m-sectors");
+    sectorsContainer.parentElement.insertBefore(titleLabel, sectorsContainer);
+}
+
+//Sets up the h3 for educations, if any were chosen (currently not used as each education sets up its own h3)
+function setupEducations() {
+    const titleLabel = document.createElement("h3");
+    titleLabel.classList.add("a-titles");
+    titleLabel.innerHTML = "Uddannelse";
+
+    const sectorsContainer = getElement("m-edu");
+    sectorsContainer.parentElement.insertBefore(titleLabel, sectorsContainer);
+}
+
+//Sets up the h3 for jobs (work), if any were chosen (currently not used as each education sets up its own h3)
+function setupJobs() {
+    const titleLabel = document.createElement("h3");
+    titleLabel.classList.add("a-titles");
+    titleLabel.innerHTML = "Erhvervserfaring";
+
+    const sectorsContainer = getElement("m-work");
+    sectorsContainer.parentElement.insertBefore(titleLabel, sectorsContainer);
+}
+
+//
+function setupSocial(json) {
+    for(key of Object.keys(json)) {
+        if(json[key] !== "") {
+            const label = document.createElement("label");
+            label.innerHTML = key;
+
+            const span = document.createElement("span");
+            span.innerHTML = json[key];
+
+            getElement(key+"-out").appendChild(label);
+            getElement(key+"-out").appendChild(span);
+        }
+    }
+}
+
+//Validates an Image Input value for a valid URL that leads to an image.
 //Returns true if yes.
 function checkurl(){
-    const linkURL = document.getElementById("image-input").value;
+    const linkURL = getElement("image-input").value;
     fetch(linkURL, {
     method: 'get',
     mode: 'cors'
@@ -106,35 +180,37 @@ function checkurl(){
 }
 
 async function apply_all(json){
-
-    const idFields = ["name-output", "age-output",
-        "email-output","city-output", "misc-text-output"]
+    const idFields = ["name-out", "age-out",
+        "email-out","city-out", "misc-text-out"]
     const jsonFields = [json.name, json.age,
         json.email, json.city, json.description]
 
-    //Iterates over both arrays. Both arrays are set up so that index[x] in both 
-    //arrays refer to the same element. (So they create pairs.)    
-    for (let i = 0; i <= idFields.length-1; i++) { 
+    //Iterates over both arrays. Both arrays are set up so that index[x] in both
+    //arrays refer to the same element. (So they create pairs.)
+    for (let i = 0; i < idFields.length; i++) {
         apply(getElement(idFields[i]), jsonFields[i])
     }
     //image is in its own, since src and innerHTML is not the same.
     getElement("image-out").src = json.picture;
-    
+
     //const emp = JSON.parse(json.employers);
     //json.employers
-    for (let empIndex = 0; empIndex <= json.employers.length-1; empIndex++) {
+    for (let empIndex = 0; empIndex < json.employers.length; empIndex++) {
         console.log(json.employers[empIndex])
-        newActualWorkMolecule(json.employers[empIndex], empIndex);
+        newActualWorkMolecule(json.employers[empIndex]);
     }
     //json.education
-    for (let eduIndex= 0; eduIndex <= json.education.length-1; eduIndex++) {
+    for (let eduIndex= 0; eduIndex < json.education.length; eduIndex++) {
         console.log(json.education[eduIndex]);
-        newActualEduMolecule(json.employers[eduIndex], eduIndex);
+        newActualEduMolecule(json.education[eduIndex]);
     }
     //json.sectors
-    for (let secIndex = 0; secIndex <= json.sectors.length-1; secIndex++) {
-        console.log(json.sectors[secIndex]);
-        newActualSector(json.sectors[secIndex],secIndex);
+    if(json.sectors.length !== 0){
+        setupSectors();
+        for (let secIndex = 0; secIndex < json.sectors.length; secIndex++) {
+            console.log(json.sectors[secIndex]);
+            newActualSector(json.sectors[secIndex]);
+        }
     }
     console.log("Done.");
 }
@@ -143,12 +219,19 @@ async function remoteValidate(event) {
     event.preventDefault();
 
     //Vars for all the many, many data fields
-    const name = document.getElementById("name-input");
-    const age = document.getElementById("age-input");
-    const email = document.getElementById("email-input");
-    const city = document.getElementById("city-input");
-    const pictureURL = document.getElementById("image-input");
-    const miscText = document.getElementById("misc-text-input");
+    const name = getElement("name-input");
+    const age = getElement("age-input");
+    const email = getElement("email-input");
+    const city = getElement("city-input");
+    const pictureURL = getElement("image-input");
+    const miscText = getElement("misc-text-input");
+
+    //JSON for social urls
+    const socialURLs = {
+        'Facebook': getElement("facebook-input").value,
+        'Twitter': getElement("twitter-input").value,
+        'LinkedIn': getElement("linkedin-input").value
+    }
 
     //Arrays for the fields that should be sent as array objects
     let employers = new Array(0);
@@ -159,7 +242,7 @@ async function remoteValidate(event) {
     const eduContainers = document.getElementsByClassName("m-tab-edu-single");
 
     //Detract 1 because the output container has the same class
-    const numOfEduContainers = eduContainers.length-1;
+    const numOfEduContainers = eduContainers.length;
 
     //Making the JSON and adding them to education
     for(let i = 0 ; i < numOfEduContainers ; i++) {
@@ -185,7 +268,7 @@ async function remoteValidate(event) {
 
     //Getting all the single work containers to filter and insert into variable as arrays
     const workContainers = document.getElementsByClassName("m-tab-work-single");
-    const numOfWorkContainers = workContainers.length-1;
+    const numOfWorkContainers = workContainers.length;
 
 
     //Making the JSON and adding them to employers
@@ -242,14 +325,16 @@ async function remoteValidate(event) {
     };
     //if(checkurl){
     const response = await fetch("https://syst-api.azurewebsites.net/cv", options);
-    console.log(response.ok);
-    
+    //Logs true if fetch worked, false if not
+    //console.log(response.ok);
+
     const package = JSON.parse(options.body)
-    console.log(package)
+    //Logs the JSON object that is the body of the fetch
+    //console.log(package)
 
     apply_all(package);
+    setupSocial(socialURLs);
 //} else {
     //alert("ERROR: Something went wrong.");
 //}
 }
-
