@@ -15,44 +15,46 @@
   */
 
 /* 1 */
-h1{
+h1 {
 	display: flex;
 	justify-content: center;
 	font-size: 40px;
 }
-h2{
+
+h2 {
 	font-size: 30px;
 }
-h3{
+h3 {
 	font-size: 20px;
 }
-.a-titles{
+.a-titles {
 	font-family: 'Roboto', sans-serif;
 }
 
-img{
+img {
 	width:
 }
 
 /* 2 */
-div{
+div {
 	margin-bottom: 20px;
 }
 
-.a-basic, .a-social{
+.a-basic, .a-social {
 	display: flex;
 	flex-direction: column;
 }
 
-.t-basic-social, .t-img-social, .m-sectors{
+.t-basic-social, .t-img-social, .m-sectors {
 	margin-bottom: 70px;
 }
+
 .m-tab-edu-single, .m-tab-work-single {
 	display: flex;
 	flex-direction: column;
 }
 
-.m-sectors{
+.m-sectors {
 	display: flex;
 	flex-direction: column;
 	max-height: 400px;
@@ -60,36 +62,39 @@ div{
 	align-content: space-around;
 	flex-wrap: wrap;
 	overflow-wrap: break-word;
-
 }
 
-.m-sector-container{
+.m-sector-container {
 	margin-bottom: 10px;
 	width: 40%;
 }
 
+/*
+	One-page display handling
+*/
+#in-page {
+	display: block;
+}
+
+#out-page {
+	display: none;
+}
+
 /* 3 */
-input{
+input, textarea {
 	font-family: 'Roboto', sans-serif;
 	font-size: 15px;
-	width: 100%;
+	width: 99.5%;
 	border-color: #E8E8E8;
 	border-radius: 5px;
-
 }
-.a-sector-checkbox{
+
+.a-sector-checkbox {
 	width: 10%;
 }
 
-textarea{
-	font-family: 'Roboto', sans-serif;
-	font-size: 15px;
-	border-color: #E8E8E8;
-	border-radius: 5px;
-}
-
 /* 4 */
-.a-tab-add-molecule{
+.a-tab-add-molecule {
 	background-color: var(--button-hover-color);
 	border: solid 1.2px var(--border-hover-color);
 	justify-content: center;
@@ -98,11 +103,10 @@ textarea{
 	max-height: 4vh;
 	cursor: pointer;
 	margin-bottom: 30px;
-
 }
 
 
-.submit-button{
+.submit-button {
 	background-color: var(--submit-hover-color);
 	border: solid 1.2px var(--border-submit-hover-color);
 	color: var(--text-color);
@@ -118,22 +122,21 @@ textarea{
 }
 
 /* 5 */
-label{
+label {
 	background-color: var(--button-color);
 	color: var(--text-color);
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.2em;
 	padding: 1px;
 	border-radius: 5px;
-	min-width: 100%;
+	min-width: 50%;
 	height: 4vh;
 	display: flex;
 	justify-content: center;
-	align-self: center;
 	margin-bottom: 2px;
 }
 
-.a-label-checkbox{
+.a-label-checkbox {
 	font-size: 0.9em;
 	background-color: WHITE;
 	color: BLACK;
@@ -142,44 +145,42 @@ label{
 	overflow-wrap: break-word;
 }
 
-.finished-CV{
-	display:none;
-}
+@media only screen and (min-width: 415px) {
 
-@media only screen and (min-width: 415px){
-
-	input{
+	input {
 		font-size: 15px;
 	}
 
-	.a-tab-add-molecule{
+	.a-tab-add-molecule {
 		font-size: 1.5em;
 		max-height: 5vh;
 		background-color: var(--button-color);
 		border: solid 1.2px var(--border-color);
 	}
-	.a-tab-add-molecule:hover{
+
+	.a-tab-add-molecule:hover {
 		background-color: var(--button-hover-color);
 		border: solid 1.2px var(--border-hover-color);
 	}
 
-	.submit-button{
+	.submit-button {
 		background-color: var(--button-color);
 		border: solid 1.2px var(--border-color);
 		font-size: 1em;
 	}
-	.submit-button:hover{
+
+	.submit-button:hover {
 		background-color: var(--submit-hover-color);
 		border: solid 1.2px var(--border-submit-hover-color);
 	}
 
-	label{
+	label {
 		font-size: 1.5em;
 		height: 5vh;
 	}
 }
 
-@media only screen and (max-width: ){
+@media only screen and (max-width: ) {
 
 	body{}
 

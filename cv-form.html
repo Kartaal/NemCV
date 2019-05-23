@@ -23,14 +23,14 @@
 <body onload="loadBranches()">
 
         <!-- Page for getting all the users data to build a CV -->
-        <div id="in-page">
+        <div id="in-page" class="container-flex">
             <!--       MAIN CONTAINER              -->
-            <main class="main container-flex">
+            <main class="main">
 
-                <form action="" method="POST" id="cv-form">
-                  <h1 class = "a-titles">Udfyld dit</h1>
+                <form id="cv-form">
+                  <h1 class="a-titles">Udfyld dit</h1>
                   <img src="img/NemCV.svg" alt="NEMCV">
-                  <h2 class = "a-titles">Omkring dig</h2>
+                  <h2 class="a-titles">Omkring dig</h2>
                     <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
                     <div class="t-basic-social">
 
@@ -71,7 +71,7 @@
                     <div class="t-social">
                       <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
                       <div class="m-social">
-                            <h2 class = "a-titles">Kontakt mig</h2>
+                            <h2 class="a-titles">Kontakt mig</h2>
                             <div class="a-social" id = "a-social-email">
                                 <label for="email-input">E-mail</label>
                                 <input type="email" id="email-input" class="email" name="email" placeholder="din@email.com" />
@@ -106,9 +106,9 @@
                     </div> -->
 
                     <!-- MOLECULE FOR SECTORS -->
-                    <h2 class = "a-titles">Tidligere erfaring</h2>
+                    <h2 class="a-titles">Tidligere erfaring</h2>
 
-                    <label for="">Brancher</label>
+                    <label>Brancher</label>
                     <div class="m-sectors" id="m-branches">
 
                         <!-- <div class="a-sector">
@@ -125,7 +125,7 @@
                             <input type="text" class="sector-3" name="sector-3" placeholder="En branche" />
                         </div> -->
                     </div>
-                    <h3 class = "a-titles"> Udannelse</h3>
+                    <h3 class="a-titles"> Udannelse</h3>
                     <!--  CONTAINER FOR EDUCATION AND WORK EXPERIENCE  -->
                     <div class="t-edu-work">
 
@@ -156,10 +156,10 @@
 
                             </div>
 
-                            <button class = "a-tab-add-molecule" id="a-tab-add-edu" type="button" onclick="addNewEduMolecule()">+</button> <!-- Skal have et ikon eller noget -->
+                            <button class="a-tab-add-molecule" id="a-tab-add-edu" type="button" onclick="addNewEduMolecule()">+</button> <!-- Skal have et ikon eller noget -->
                         </div>
 
-                        <h3 class = "a-titles">Erhvervserfaring</h3>
+                        <h3 class="a-titles">Erhvervserfaring</h3>
                         <!-- CONTAINER FOR WORK -->
                         <div class="m-work">
                             <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
@@ -177,21 +177,21 @@
                                 <input type="date" class="a-tab-work-single-end-date" id="work-end-1" placeholder="Hvornår du stoppede dette arbejde" >
                             </div>
 
-                            <button class = "a-tab-add-molecule" id="a-tab-add-work" type="button" onclick="addNewWorkMolecule()">+</button> <!-- Skal have et ikon eller noget -->
+                            <button class="a-tab-add-molecule" id="a-tab-add-work" type="button" onclick="addNewWorkMolecule()">+</button> <!-- Skal have et ikon eller noget -->
                         </div>
                     </div>
 
-                    <input type="submit" class = "submit-button" id="submit-button" onclick="remoteValidate(event)" value="Send"/>
+                    <input type="submit" class="submit-button" id="submit-button" onclick="remoteValidate(event)" value="Send"/>
 
                 </form>
             </main>
         </div>
 
-        <section class = "finished-CV">
         <!--  Page for adding all the CV data and displaying it   -->
 
-        <div id="out-page">
+        <div id="out-page" class="container-flex">
 
+            <h2 class="a-titles">Omkring dig</h2>
             <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
             <div class="t-basic-social">
 
@@ -232,7 +232,8 @@
                         <div id="age-out" class="age">
                         </div>
                     </div>
-                    Kontakt mig
+
+                      <h2 class="a-titles">Kontakt mig</h2>
                     <div class="a-social-email">
                         <label>E-mail</label>
                         <div id="email-out" class="email">
@@ -269,6 +270,7 @@
             </div> -->
 
             <!-- MOLECULE FOR SECTORS -->
+            <h2 class="a-titles">Tidligere erfaring</h2>
             <div class="m-sectors">
                 <div class="a-sector">
                     <div class="sector-1">
@@ -287,6 +289,7 @@
             <!--  CONTAINER FOR EDUCATION AND WORK EXPERIENCE  -->
             <div class="t-edu-work">
 
+                <h3 class="a-titles"> Udannelse</h3>
                 <!-- CONTAINER FOR EDUCATION -->
                 <div class="m-edu">
 
@@ -312,6 +315,7 @@
 
                 <!-- CONTAINER FOR WORK -->
                 <div class="m-work">
+                    <h3 class="a-titles">Erhvervserfaring</h3>
                     <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                     <div class="m-tab-work-single">
                         <label>Titel</label>
@@ -333,6 +337,4 @@
                 </div>
             </div>
         </div>
-        </section>
-
 </body>
