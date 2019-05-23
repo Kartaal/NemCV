@@ -18,13 +18,13 @@
 h1{
 	display: flex;
 	justify-content: center;
-	font-size: 60px;
+	font-size: 40px;
 }
 h2{
-	font-size: 50px;
+	font-size: 30px;
 }
 h3{
-	font-size: 40px;
+	font-size: 20px;
 }
 .a-titles{
 	font-family: 'Roboto', sans-serif;
@@ -51,16 +51,20 @@ div{
 .m-sectors{
 	display: flex;
 	flex-direction: column;
-	max-height: 500px;
+	max-height: 300px;
+	max-width: 70%;
 	flex-wrap: wrap;
+
 }
+
 .m-sector-container{
 	margin-bottom: 10px;
+	max-width: 80%;
 }
 /* 3 */
 input{
 	font-family: 'Roboto', sans-serif;
-	font-size: 30px;
+	font-size: 15px;
 	border-color: WHITE;
 	border-radius: 5px;
 
@@ -71,7 +75,7 @@ input{
 	background-color: var(--button-hover-color);
 	border: solid 1.2px var(--border-hover-color);
 	justify-content: center;
-	font-size: 3em;
+	font-size: 1.5em;
 	width: 20%;
 	max-height: 4vh;
 	cursor: pointer;
@@ -84,7 +88,7 @@ input{
 	background-color: var(--submit-hover-color);
 	border: solid 1.2px var(--border-submit-hover-color);
 	color: var(--text-color);
-	font-size: 2em;
+	font-size: 1em;
 	font-family: 'Roboto', sans-serif;
 	border-radius: 5px;
 	width: 20%;
@@ -100,7 +104,7 @@ label{
 	background-color: var(--button-color);
 	color: var(--text-color);
 	font-family: 'Roboto', sans-serif;
-	font-size: 2.3em;
+	font-size: 1.2em;
 	padding: 1px;
 	border-radius: 5px;
 	min-width: 100%;
@@ -112,17 +116,19 @@ label{
 }
 
 .a-label-checkbox{
-	font-size: 1.7em;
+	font-size: 0.7em;
 	background-color: WHITE;
 	color: BLACK;
+	max-width: 10%;
 	display: inline;
+	overflow-wrap: break-word;
 }
 
 section{
 	display:none;
 }
 
-@media only screen and (max-width: 375px), (min-width: 376px){
+@media only screen and (min-width: 415px){
 
 	input{
 		font-size: 15px;
