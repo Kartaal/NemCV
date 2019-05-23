@@ -53,7 +53,7 @@ div {
 	margin-bottom: 70px;
 }
 
-.m-tab-edu-single, .m-tab-work-single {
+.m-edu, .m-work {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 45px;
@@ -89,6 +89,7 @@ div {
 	margin-bottom: 12px;
 }
 
+
 /* 3 */
 input, textarea {
 	font-family: 'Roboto', sans-serif;
@@ -96,6 +97,10 @@ input, textarea {
 	width: 99.5%;
 	border-color: #E8E8E8;
 	border-radius: 5px;
+}
+
+textarea{
+	resize: none;
 }
 
 .a-sector-checkbox {
@@ -156,18 +161,36 @@ label {
 
 @media only screen and (min-width: 415px) {
 
+	.t-basic-social, .t-social, .t-edu-work{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+
+	}
+
+
+	.m-edu, .m-work, .t-basic, .m-social{
+		width: 30%;
+	}
+
 	input {
 		font-size: 15px;
+		width: 100%;
+	}
+	textarea{
+		width: 100%;
+		height: 105px;
 	}
 
 	.a-tab-add-molecule {
 		font-size: 1.5em;
-		max-height: 5vh;
+		max-height: 4vh;
+		width: 50%;
 		background-color: var(--button-color);
 		border: solid 1.2px var(--border-color);
 	}
 
-	.a-tab-add-molecule:hover {
+	.a-tab-add-molecule:hover, 	.a-tab-add-molecule:focus {
 		background-color: var(--button-hover-color);
 		border: solid 1.2px var(--border-hover-color);
 	}
@@ -178,7 +201,7 @@ label {
 		font-size: 1em;
 	}
 
-	.submit-button:hover {
+	.submit-button:hover, .submit-button:focus {
 		background-color: var(--submit-hover-color);
 		border: solid 1.2px var(--border-submit-hover-color);
 	}
@@ -186,6 +209,15 @@ label {
 	label {
 		font-size: 1.5em;
 		height: 5vh;
+		width: 100%;
+	}
+
+	.m-sector-title{
+		width: 100%;
+	}
+
+	.a-label-checkbox {
+		font-size: 1.3em;
 	}
 }
 
