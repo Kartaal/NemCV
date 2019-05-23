@@ -30,6 +30,10 @@ h3{
 	font-family: 'Roboto', sans-serif;
 }
 
+img{
+	width:
+}
+
 /* 2 */
 div{
 	margin-bottom: 20px;
@@ -51,23 +55,37 @@ div{
 .m-sectors{
 	display: flex;
 	flex-direction: column;
-	max-height: 300px;
-	max-width: 70%;
+	max-height: 400px;
+	width: 100%;
+	align-content: space-around;
 	flex-wrap: wrap;
+	overflow-wrap: break-word;
 
 }
 
 .m-sector-container{
 	margin-bottom: 10px;
-	max-width: 80%;
+	width: 40%;
 }
+
 /* 3 */
 input{
 	font-family: 'Roboto', sans-serif;
 	font-size: 15px;
-	border-color: WHITE;
+	width: 100%;
+	border-color: #E8E8E8;
 	border-radius: 5px;
 
+}
+.a-sector-checkbox{
+	width: 10%;
+}
+
+textarea{
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	border-color: #E8E8E8;
+	border-radius: 5px;
 }
 
 /* 4 */
@@ -116,15 +134,15 @@ label{
 }
 
 .a-label-checkbox{
-	font-size: 0.7em;
+	font-size: 0.9em;
 	background-color: WHITE;
 	color: BLACK;
-	max-width: 10%;
+	max-width: 70%;
 	display: inline;
 	overflow-wrap: break-word;
 }
 
-section{
+.finished-CV{
 	display:none;
 }
 

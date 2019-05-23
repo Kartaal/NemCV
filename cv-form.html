@@ -10,7 +10,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link href="styles/normalize.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
     <link href="styles/CV-styles.css" rel="stylesheet">
@@ -28,7 +28,8 @@
             <main class="main container-flex">
 
                 <form action="" method="POST" id="cv-form">
-                  <h1 class = "a-titles">Udfyld dit CV</h1>
+                  <h1 class = "a-titles">Udfyld dit</h1>
+                  <img src="img/NemCV.svg" alt="NEMCV">
                   <h2 class = "a-titles">Omkring dig</h2>
                     <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
                     <div class="t-basic-social">
@@ -133,17 +134,26 @@
 
                             <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                             <div class="m-tab-edu-single">
-                                <label for="edu-line-1">Studieretning</label>
-                                <input type="text" class="a-tab-edu-single-line" id="edu-line-1" placeholder="Din studieretning" >
+                                <div class="m-edu-input">
+                                  <label for="edu-line-1">Studieretning</label>
+                                  <input type="text" class="a-tab-edu-single-line" id="edu-line-1" placeholder="Din studieretning" >
+                                </div>
 
-                                <label for="edu-school-1">Skole</label>
-                                <input type="text" class="a-tab-edu-single-school" id="edu-school-1" placeholder="Institutionen du tog uddannelsen på" >
+                                <div class="m-edu-input">
+                                  <label for="edu-school-1">Skole</label>
+                                  <input type="text" class="a-tab-edu-single-school" id="edu-school-1" placeholder="Institutionen du tog uddannelsen på" >
+                                </div>
 
-                                <label for="edu-start-1">Start dato</label>
-                                <input type="date" class="a-tab-edu-single-start-date" id="edu-start-1" placeholder="Hvornår du startede denne uddannelse" >
+                                <div class="m-edu-input">
+                                  <label for="edu-start-1">Start dato</label>
+                                  <input type="date" class="a-tab-edu-single-start-date" id="edu-start-1" placeholder="Hvornår du startede denne uddannelse" >
+                                </div>
 
-                                <label for="edu-end-1">Slut dato</label>
-                                <input type="date" class="a-tab-edu-single-end-date" id="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
+                                <div class="m-edu-input">
+                                  <label for="edu-end-1">Slut dato</label>
+                                  <input type="date" class="a-tab-edu-single-end-date" id="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
+                                </div>
+
                             </div>
 
                             <button class = "a-tab-add-molecule" id="a-tab-add-edu" type="button" onclick="addNewEduMolecule()">+</button> <!-- Skal have et ikon eller noget -->
@@ -177,7 +187,7 @@
             </main>
         </div>
 
-        <section>
+        <section class = "finished-CV">
         <!--  Page for adding all the CV data and displaying it   -->
 
         <div id="out-page">

@@ -18,6 +18,7 @@ async function loadBranches() {
 
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.className = "a-sector-checkbox";
     checkbox.name = opt;
     checkbox.classList.add("sector");
     checkbox.value = opt;
