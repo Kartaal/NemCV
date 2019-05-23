@@ -25,7 +25,7 @@ function addNewEduMolecule() {
     //Make a new input atom for education (line), with attributes
     const lineInput = document.createElement("input");
     lineInput.setAttribute("type", "text");
-    lineInput.classList.add("a-tab-edu-single-line");
+    lineInput.classList.add("a-tab-edu-single");
     lineInput.setAttribute("name", "edu-line-"+eduMoleculeCount);
     lineInput.setAttribute("placeholder", "Din studieretning");
 
@@ -49,7 +49,7 @@ function addNewEduMolecule() {
     //Make a new input atom for school, with attributes
     const schoolInput = document.createElement("input");
     schoolInput.setAttribute("type", "text");
-    schoolInput.classList.add("a-tab-edu-single-school");
+    schoolInput.classList.add("a-tab-edu-single");
     schoolInput.setAttribute("name", "edu-school-"+eduMoleculeCount);
     schoolInput.setAttribute("placeholder", "Institutionen du tog uddannelsen på");
 
@@ -71,7 +71,7 @@ function addNewEduMolecule() {
     //Make a new input atom for start date, with attributes
     const startInput = document.createElement("input");
     startInput.setAttribute("type", "date");
-    startInput.classList.add("a-tab-edu-single-start-date");
+    startInput.classList.add("a-tab-edu-single");
     startInput.setAttribute("name", "edu-start-"+eduMoleculeCount);
     startInput.setAttribute("placeholder", "Hvornår du startede denne uddannelse");
 
@@ -93,7 +93,7 @@ function addNewEduMolecule() {
     //Make a new input atom for end date, with attributes
     const endInput = document.createElement("input");
     endInput.setAttribute("type", "date");
-    endInput.classList.add("a-tab-edu-single-end-date");
+    endInput.classList.add("a-tab-edu-single");
     endInput.setAttribute("name", "edu-end-"+eduMoleculeCount);
     endInput.setAttribute("placeholder", "Hvornår du stoppede denne uddannelse");
 
@@ -128,7 +128,7 @@ function addNewWorkMolecule() {
     //Make a new input atom for title, with attributes
     const titleInput = document.createElement("input");
     titleInput.setAttribute("type", "text");
-    titleInput.classList.add("a-tab-work-single-title");
+    titleInput.classList.add("a-tab-work-single");
     titleInput.setAttribute("name", "work-title-"+workMoleculeCount);
     titleInput.setAttribute("placeholder", "Din jobtitel fra dette arbejde");
 
@@ -152,7 +152,7 @@ function addNewWorkMolecule() {
     //Make a new input atom for company, with attributes
     const companyInput = document.createElement("input");
     companyInput.setAttribute("type", "text");
-    companyInput.classList.add("a-tab-work-single-company");
+    companyInput.classList.add("a-tab-work-single");
     companyInput.setAttribute("name", "work-company-"+workMoleculeCount);
     companyInput.setAttribute("placeholder", "Din arbejdsgiver fra dette arbejde");
 
@@ -174,7 +174,7 @@ function addNewWorkMolecule() {
     //Make a new input atom for start date, with attributes
     const startInput = document.createElement("input");
     startInput.setAttribute("type", "date");
-    startInput.classList.add("a-tab-work-single-start-date");
+    startInput.classList.add("a-tab-work-single");
     startInput.setAttribute("name", "work-start-"+workMoleculeCount);
     startInput.setAttribute("placeholder", "Hvornår du startede dette arbejde");
 
@@ -196,7 +196,7 @@ function addNewWorkMolecule() {
     //Make a new input atom for end date, with attributes
     const endInput = document.createElement("input");
     endInput.setAttribute("type", "date");
-    endInput.classList.add("a-tab-work-single-end-date");
+    endInput.classList.add("a-tab-work-single");
     endInput.setAttribute("name", "work-end-"+workMoleculeCount);
     endInput.setAttribute("placeholder", "Hvornår du stoppede dette arbejde");
 

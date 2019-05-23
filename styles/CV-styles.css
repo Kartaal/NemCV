@@ -1,6 +1,6 @@
 /* Indholdfortegnelse:
 
-	1. Overskrifter
+	1. Overskrifter og billede
 	2. div'er
 	3. input
 	4. pressable ting
@@ -16,23 +16,27 @@
 
 /* 1 */
 h1 {
-	display: flex;
-	justify-content: center;
 	font-size: 40px;
+	margin-bottom: 10px;
 }
-
 h2 {
-	font-size: 30px;
+	font-size: 26px;
 }
 h3 {
 	font-size: 20px;
 }
 .a-titles {
+	display: flex;
+	justify-content: center;
 	font-family: 'Roboto', sans-serif;
 }
 
 img {
-	width:
+	display: flex;
+	justify-content: center;
+	width: 70%;
+	margin: auto;
+	margin-bottom: 40px;
 }
 
 /* 2 */
@@ -52,6 +56,7 @@ div {
 .m-tab-edu-single, .m-tab-work-single {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 45px;
 }
 
 .m-sectors {
@@ -78,6 +83,9 @@ div {
 
 #out-page {
 	display: none;
+}
+.a-tab-edu-single, .a-tab-work-single{
+	margin-bottom: 12px;
 }
 
 /* 3 */
