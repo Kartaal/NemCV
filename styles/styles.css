@@ -120,9 +120,10 @@ div.m-collapsible {
 	margin-bottom: 10px;
 }
 
-.a-collapsible-text {
+div.a-collapsible-text {
   padding: 0 18px;
-	width: 38%;
+	width: 50vw;
+	height: 100vh;
   display: none;
   overflow: hidden;
   background-color: #B2BACD;

@@ -1,11 +1,8 @@
-
-/* Favervariabler til websiden */
+/* forskellige størrelser til diverse skærmstørrelser */
 
 :root{
-	
-	--text: rgba(255,255,0,0.5);
-	--background: rgba(255,0,255,.5);
-	--button-one: rgba();
-	--button-two: rgba();
 
-}
+	--width-button-400px: 20vw;
+	--width-button-360px: 50vw;
+
+;

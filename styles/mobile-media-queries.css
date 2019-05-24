@@ -1,0 +1,160 @@
+/* mobile-first media queries */
+
+@media screen 
+and (max-device-width: 400px) 
+and (min-device-width: 360px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait)
+{
+
+  main{
+    margin-left: auto;
+    margin-right: auto;
+    width: 96vw;
+    height: 100vh;
+    background-color: rgba(255,255,255,1.0);
+
+  }
+
+  h1{
+    display: flex;
+    margin: auto;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-header);
+  }
+
+  .m-buttons-row{
+
+    display: inline-flex;
+
+  }
+
+  div.a-logo{
+    margin: auto;
+    width: 50vw;
+    height: 20%;
+  }
+
+  .a-entry-button{
+    display: flex;
+    margin: auto;
+    width: 50vw;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 10px;
+    color: var(--text-color);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+  }
+
+
+  .a-introduction-container{
+    display: flex;
+    height: 20vh;
+    width: 100%;
+    margin: auto;
+    background-color: rgba(110,120,5,0.1);
+  }
+
+  section.m-introduction-buttons-container{
+    height: 70vh;
+    margin: auto;
+    background-color: rgba(110,150,5,0.5);
+  }
+
+  p.a-collapsible-text-content{
+
+
+
+  }
+
+  section{
+    display: flex;
+    justify-content: center;
+  }
+
+  .m-collapsible{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    height: inherit;
+  }
+
+  .m-collapsible-container{
+    flex-wrap: wrap;
+	}
+
+  .a-collapsible-button {
+    position: relative;
+    display: flex;
+    z-index: 1;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--button-color);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    border-color: var(--button-color);
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    width: 70vw;
+  }
+
+  .active, .a-collapsible-button:hover {
+    background-color: #555;
+  }
+
+  .text-box-transition{
+    -webkit-transition: height 2s;
+    transition: height 2s;
+  }
+
+  .a-collapsible-text {
+    position: relative;
+    z-index: 0;
+    padding: 0 18px;
+    display: none;
+    overflow: hidden; 
+    margin-top: -10px;
+    background-color: #B2BACD;
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  .a-collapsible-text-content{
+    font-family: 'Roboto', sans-serif;
+  }
+
+  #triangle-down{
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 12px solid white;    
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+
+
+  .test-color-one{
+
+  background-color: rgba(150,50,15,0.4);
+
+  }
+
+  .test-color-two{
+
+  background-color: rgba(150,200,15,0.4);
+
+    
+  }
+
+}
+
