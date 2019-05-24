@@ -20,13 +20,13 @@ async function loadBranches() {
     checkbox.type = "checkbox";
     checkbox.className = "a-sector-checkbox";
     checkbox.name = opt;
+    checkbox.id = "sector-"+i;
     checkbox.classList.add("sector");
     checkbox.value = opt;
     checkbox.onclick = onlyThreeChecked;
 
     var label = document.createElement("label");
-    label.className = "a-label-checkbox";
-    //label.htmlFor = "id";
+    label.htmlFor = "sector-"+i;
     label.appendChild(document.createTextNode(opt));
 
     checkboxContainer.appendChild(checkbox);
