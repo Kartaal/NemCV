@@ -77,11 +77,11 @@ div {
 /*
 	One-page display handling
 */
-#in-page {
+.display-block {
 	display: block;
 }
 
-#out-page {
+.display-none {
 	display: none;
 }
 

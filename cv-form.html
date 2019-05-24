@@ -22,7 +22,7 @@
 <body onload="loadBranches()">
 
     <!-- Page for getting all the users data to build a CV -->
-    <div id="in-page" class="container-flex">
+    <div id="in-page" class="container-flex display-block">
         <!--       MAIN CONTAINER              -->
         <main class="main">
 
@@ -137,7 +137,6 @@
                     </div> -->
                 </div>
 
-
                 <!--  CONTAINER FOR EDUCATION AND WORK EXPERIENCE  -->
                 <div class="t-edu-work">
 
@@ -194,7 +193,7 @@
 
     <!--  Page for adding all the CV data and displaying it   -->
 
-    <div id="out-page" class="container-flex">
+    <div id="out-page" class="container-flex display-none">
 
         <h2 class="a-titles">Omkring dig</h2>
         <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
@@ -204,20 +203,14 @@
             <div class="t-basic">
 
                 <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
-                <div class="m-basic">
+                <div id="name-out" class="m-basic">
                     <label>Navn</label>
-                    <div id="name-out" class="name">
-                    </div>
                 </div>
-                <div class="a-basic-city">
+                <div id="city-out" class="a-basic-city">
                     <label>By</label>
-                    <div id="city-out" class="city">
-                    </div>
                 </div>
-                <div class="a-basic-misc-text">
+                <div id="misc-text-out" class="a-basic-misc-text">
                     <label>Om dig</label>
-                    <div id="misc-text-out" class="misc-text">
-                    </div>
                 </div>
             </div>
         </div>
@@ -232,18 +225,15 @@
 
             <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
             <div class="m-social">
-                <div class="a-social-age">
+                <div id="age-out" class="a-social-age">
                     <label>Alder</label>
-                    <div id="age-out" class="age">
-                    </div>
                 </div>
 
                 <hr />
+
                 <h2 class="a-titles">Kontakt mig</h2>
-                <div class="a-social-email">
+                <div id="email-out" class="a-social-email">
                     <label>E-mail</label>
-                    <div id="email-out" class="email">
-                    </div>
                 </div>
                 <div class="a-social-facebook">
                     <div id="Facebook-out" class="facebook">
@@ -303,8 +293,8 @@
                     <label>Slut dato</label>
                     <div class="a-tab-edu-single-end-date">
                     </div>
-                    -->
                 </div>
+                -->
             </div>
 
             <!-- CONTAINER FOR WORK -->
