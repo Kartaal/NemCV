@@ -133,7 +133,7 @@ body{
       height: inherit;
     }
 
-    .m-button-container{
+    .m-collapsible-container{
       display: flex;
       width: 40vw;
       flex-direction: column;

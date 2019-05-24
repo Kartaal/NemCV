@@ -88,7 +88,7 @@ and (-webkit-min-device-pixel-ratio: 2){
       height: inherit;
     }
 
-    .m-button-container{
+    .m-collapsible-container{
       display: flex;
       flex-wrap: wrap;
       width: 50vw;

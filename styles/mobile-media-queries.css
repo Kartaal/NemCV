@@ -84,7 +84,7 @@ and (orientation: portrait)
     height: inherit;
   }
 
-  .m-button-container{
+  .m-collapsible-container{
     flex-wrap: wrap;
 	}
 
