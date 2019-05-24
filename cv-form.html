@@ -176,17 +176,17 @@
 
                     <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
                     <div class="m-basic">
-                        <label>Navn</label>
+                        <label id="name-output">Navn: </label>
                         <div id="name-out" class="name">
                         </div>
                     </div>
                     <div class="a-basic-city">
-                        <label>By</label>
+                        <label id="city-output">By</label>
                         <div id="city-out" class="city">
                         </div>
                     </div>
                     <div class="a-basic-misc-text">
-                        <label>Om dig</label>
+                        <label id="misc-text-output">Om dig</label>
                         <div id="misc-text-out" class="misc-text">
                         </div>
                     </div>
@@ -204,30 +204,36 @@
                 <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
                 <div class="m-social">
                     <div class="a-social-age">
-                        <label>Alder</label>
+                        <label id="age-output">Alder</label>
                         <div id="age-out" class="age">
                         </div>
                     </div>
                     Kontakt mig
                     <div class="a-social-email">
-                        <label>E-mail</label>
+                        <label id="email-output">E-mail</label>
                         <div id="email-out" class="email">
                         </div>
                     </div>
-                    <div class="a-social-facebook">
+                    <div id="Facebook-out" class="a-social-facebook">
+                        <!-- Once again, template for dynamically generated tags
                         <label>Facebook</label>
                         <div id="facebook-out" class="facebook">
                         </div>
+                        -->
                     </div>
-                    <div class="a-social-twitter">
+                    <div id="Twitter-out" class="a-social-twitter">
+                        <!-- Once again, template for dynamically generated tags
                         <label>Twitter</label>
                         <div id="twitter-out" class="twitter">
                         </div>
+                        -->
                     </div>
-                    <div class="a-social-linkedin">
+                    <div id="LinkedIn-out" class="a-social-linkedin">
+                        <!-- Once again, template for dynamically generated tags
                         <label>LinkedIn</label>
                         <div id="linkedin-out" class="linkedin">
                         </div>
+                        -->
                     </div>
                 </div>
             </div>
@@ -245,50 +251,35 @@
             </div> -->
 
             <!-- MOLECULE FOR SECTORS -->
-            <div class="m-sectors">
-                <div class="a-sector">
-                    <div class="sector-1">
-                    </div>
-                </div>
-                <div class="a-sector">
-                    <div class="sector-2">
-                    </div>
-                </div>
-                <div class="a-sector">
-                    <div class="sector-3">
-                    </div>
-                </div>
+            <div class="m-sectors" id="m-sectors">
+                <!-- Sector atoms are dynamically generated -->
             </div>
 
             <!--  CONTAINER FOR EDUCATION AND WORK EXPERIENCE  -->
             <div class="t-edu-work">
 
                 <!-- CONTAINER FOR EDUCATION -->
-                <div class="m-edu">
+                <div class="m-edu" id="m-edu">
 
                     <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
+                    <!-- Dynamically generated, this is just the template
                     <div class="m-tab-edu-single">
                         <label>Studieretning</label>
-                        <div class="a-tab-edu-single-line">
-                        </div>
+                        <span>SWU</span>
 
                         <label>Skole</label>
-                        <div class="a-tab-edu-single-school">
-                        </div>
+                        <span>ITU</span>
 
-                        <label>Start dato</label>
-                        <div class="a-tab-edu-single-start-date">
-                        </div>
-
-                        <label>Slut dato</label>
-                        <div class="a-tab-edu-single-end-date">
-                        </div>
+                        <label>Periode</label>
+                        <span>12-5-2017 - 30-2-2035</span>
                     </div>
+                    -->
                 </div>
 
                 <!-- CONTAINER FOR WORK -->
-                <div class="m-work">
+                <div class="m-work" id="m-work">
                     <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
+                    <!-- just the template again
                     <div class="m-tab-work-single">
                         <label>Titel</label>
                         <div class="a-tab-work-single-line">
@@ -306,6 +297,7 @@
                         <div class="a-tab-work-single-end-date">
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
