@@ -14,6 +14,8 @@
 
   */
 
+@import url('colors.css');
+
 /* 1 */
 h1 {
 	font-size: 40px;
@@ -37,6 +39,18 @@ img {
 	width: 70%;
 	margin: auto;
 	margin-bottom: 40px;
+}
+
+#watermark {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+#watermark>img {
+	width: 7%;
+	margin-bottom: 0px;
+	margin: 0;
 }
 
 /* 2 */
@@ -99,7 +113,7 @@ input, textarea {
 	border-radius: 5px;
 }
 
-textarea{
+textarea {
 	resize: none;
 }
 
@@ -159,6 +173,25 @@ label {
 	overflow-wrap: break-word;
 }
 
+span, a {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.m-basic, .m-social-content, .m-sector-output, .m-edu-output, .m-work-output {
+  background-color:  var(--text-background-color);
+  border-radius: 5px;
+  width: 100%;
+}
+
+.m-sector-output {
+	width: 75%;
+	margin: auto;
+}
+
+/*  STYLES FOR NON-MOBILE  */
 @media only screen and (min-width: 415px) {
 
 	.t-basic-social, .t-social, .t-edu-work{
@@ -182,7 +215,7 @@ label {
 		font-size: 15px;
 		width: 100%;
 	}
-	textarea{
+	textarea {
 		width: 100%;
 		height: 105px;
 	}
@@ -215,10 +248,12 @@ label {
 		font-size: 1.5em;
 		height: 5vh;
 		width: 100%;
+		/*width: 99.4%;*/
 	}
 
 	.m-sector-title{
 		width: 100%;
+  		/*width: 99.7%;*/
 	}
 
 	.a-label-checkbox {
