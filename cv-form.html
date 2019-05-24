@@ -12,7 +12,7 @@
     <link href="styles/normalize.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
     <link href="styles/CV-styles.css" rel="stylesheet">
-    <link href="styles/CV-output-styles.css" rel="stylesheet">
+    <!--<link href="styles/CV-output-style.css" rel="stylesheet">-->
 
     <script src="scripts/add-molecules.js" type="text/javascript" async></script>
     <script src="scripts/branches.js" type="text/javascript" async></script>
@@ -22,13 +22,13 @@
 <body onload="loadBranches()">
 
     <!-- Page for getting all the users data to build a CV -->
-    <div id="in-page" class="container-flex display-none">
+    <div id="in-page" class="container-flex display-block">
         <!--       MAIN CONTAINER              -->
         <main class="main">
 
             <form id="cv-form">
               <h1 class="a-titles container-flex">Udfyld dit</h1>
-              <img src="img/NemCV.svg" alt="NEMCV">
+              <img src="img/NemCV.svg" alt="NEMCV logo">
               <h2 class="a-titles">Omkring dig</h2>
                 <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
                 <div class="t-basic-social" >
@@ -186,14 +186,13 @@
                 </div>
 
                 <input type="submit" class="submit-button" id="submit-button" onclick="remoteValidate(event)" value="Send"/>
-
             </form>
         </main>
     </div>
 
     <!--  Page for adding all the CV data and displaying it   -->
 
-    <div id="out-page" class="container-flex display-block">
+    <div id="out-page" class="container-flex display-none">
 
         <h2 class="a-titles">Omkring dig</h2>
         <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
@@ -328,7 +327,12 @@
                 </div>
             </div>
             -->
+            </div>
         </div>
-    </div>
+
+        <div id="watermark">
+            <small>Dette CV er lavet af</small>
+            <img src="img/NemCV.svg" alt="NEMCV logo">
+        </div>
     </div>
 </body>
