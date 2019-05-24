@@ -359,12 +359,8 @@ async function remoteValidate(event) {
     //  Displays an error if the check returns false
     if(checkurl && optionsFilled){
         const response = await fetch("https://syst-api.azurewebsites.net/cv", options);
-        //Logs true if fetch worked, false if not
-        //console.log(response.ok);
 
         const package = JSON.parse(options.body)
-        //Logs the JSON object that is the body of the fetch
-        //console.log(package)
 
         apply_all(package);
         setupSocial(socialURLs);
