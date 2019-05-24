@@ -1,0 +1,14 @@
+button{
+
+	width: 25vw;
+	height: 10%;
+
+}
+
+.button-wrapper{
+
+	display: flex;
+	flex-flow: row wrap;
+	width: 50vw;
+
+}

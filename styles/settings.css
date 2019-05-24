@@ -1,0 +1,8 @@
+/* forskellige størrelser til diverse skærmstørrelser */
+
+:root{
+
+	--width-button-400px: 20vw;
+	--width-button-360px: 50vw;
+
+;
