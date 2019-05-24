@@ -14,7 +14,6 @@ function apply(identity, v) {
 }
 
 //Adds a new Work molecule to the Actual CV
-// Parameters: Title, Start date, end date,
 function newActualWorkMolecule(json){
 
     const actualContainer = document.createElement("div");
@@ -43,14 +42,10 @@ function newActualWorkMolecule(json){
         json.to = "nu";
     }
 
-    /* An attempt at changing the formatting of the date string from input
-    const fromArray = json.from.split("-");
-    const date = new Date(Number(fromArray[0]), Number(fromArray[1]), Number(fromArray[2]));
-    */
-
     const timeParagraph = document.createElement("span");
     timeParagraph.innerHTML = json.from + " - " + json.to;
 
+    //Finally, append the molecule(s)
     actualContainer.appendChild(header);
     actualContainer.appendChild(titleLabel);
     actualContainer.appendChild(titleParagraph);
@@ -62,6 +57,7 @@ function newActualWorkMolecule(json){
     getElement("m-work").appendChild(actualContainer);
 }
 
+//Adds a new Education molecule to the Actual CV
 function newActualEduMolecule(json){
 
     const actualContainer = document.createElement("div");
@@ -93,6 +89,7 @@ function newActualEduMolecule(json){
     const timeParagraph = document.createElement("span");
     timeParagraph.innerHTML = json.from + " - " + json.to;
 
+    //Finally append the molecule(s)
     actualContainer.appendChild(header);
     actualContainer.appendChild(lineLabel);
     actualContainer.appendChild(lineParagraph);
@@ -122,7 +119,7 @@ function setupSectors() {
     sectorsContainer.parentElement.insertBefore(titleLabel, sectorsContainer);
 }
 
-//Sets up the h3 for educations, if any were chosen (currently not used as each education sets up its own h3)
+//Sets up the <h3> for educations, if any were chosen (currently not used as each education sets up its own h3)
 function setupEducations() {
     const titleLabel = document.createElement("h3");
     titleLabel.classList.add("a-titles");
@@ -132,7 +129,7 @@ function setupEducations() {
     sectorsContainer.parentElement.insertBefore(titleLabel, sectorsContainer);
 }
 
-//Sets up the h3 for jobs (work), if any were chosen (currently not used as each education sets up its own h3)
+//Sets up the <h3> for jobs (work), if any were chosen (currently not used as each education sets up its own h3)
 function setupJobs() {
     const titleLabel = document.createElement("h3");
     titleLabel.classList.add("a-titles");
@@ -142,7 +139,7 @@ function setupJobs() {
     sectorsContainer.parentElement.insertBefore(titleLabel, sectorsContainer);
 }
 
-//Sets up the social media elements for the sites filled
+// Sets up social links. If any.
 function setupSocial(json) {
     for(key of Object.keys(json)) {
         if(json[key] !== "") {
@@ -172,8 +169,8 @@ function toggleOutPage(){
     window.scrollTo(0, 0);
 }
 
-//Validates an Image Input value for a valid URL that leads to an image.
-//Returns true if yes.
+//Validates an Image input value for a valid URL that leads to an image.
+//Returns true if it is a valid URL.
 function checkurl(){
     const linkURL = getElement("image-input").value;
     fetch(linkURL, {
@@ -182,7 +179,6 @@ function checkurl(){
     })
     .then(function(response){
         if(response.ok){
-            console.log(response);
             return true
         } else {
             return false
@@ -193,14 +189,14 @@ function checkurl(){
 
 }
 
+// Sets up 2 arrays, creating pairs of id Strings, and Json object values.
 async function apply_all(json){
     const idFields = ["name-out", "age-out",
         "email-out","city-out", "misc-text-out"]
     const jsonFields = [json.name, json.age,
         json.email, json.city, json.description]
 
-    //Iterates over both arrays. Both arrays are set up so that index[x] in both
-    //arrays refer to the same element. (So they create pairs.)
+    //Iterates over both arrays. and calls apply using the id, and the Json object value for the given pair. (Index i)
     for (let i = 0; i < idFields.length; i++) {
         if(jsonFields[i].value !== "") {
             if(idFields[i] !== "email-out") {
@@ -218,26 +214,32 @@ async function apply_all(json){
     //image is in its own, since src and innerHTML is not the same.
     getElement("image-out").src = json.picture;
 
-    //const emp = JSON.parse(json.employers);
+    /*
+        The following three for() statements iterate over the following Json object values:
+        employers, education and sectors. Theese three objects refer to array structurs of potential varying sizes.
+        Employers and education being the 2 most unpredictable. Sectors is fixed between 0-3.
+        Therefore, this method iterates over every single array to bring forth a molecule containing everything the user
+        types in on the input side of things, to the output side of things. So that we can input any number of educations or jobs.
+
+        Meanwhile, Sectors do follow the same pattern, it is also an aray structure, but needs special attention, since
+        its molecule only contains a single value. Namely the sector.
+    */
+
     //json.employers
     for (let empIndex = 0; empIndex < json.employers.length; empIndex++) {
-        console.log(json.employers[empIndex])
         newActualWorkMolecule(json.employers[empIndex]);
     }
     //json.education
     for (let eduIndex= 0; eduIndex < json.education.length; eduIndex++) {
-        console.log(json.education[eduIndex]);
         newActualEduMolecule(json.education[eduIndex]);
     }
     //json.sectors
     if(json.sectors.length !== 0){
         setupSectors();
         for (let secIndex = 0; secIndex < json.sectors.length; secIndex++) {
-            console.log(json.sectors[secIndex]);
             newActualSector(json.sectors[secIndex]);
         }
     }
-    console.log("Done.");
 }
 
 async function remoteValidate(event) {
@@ -264,6 +266,7 @@ async function remoteValidate(event) {
     let sectors = new Array(0);
 
     //Getting all the single education containers to filter and insert into variable as arrays
+    //Also, the reason why getElment() isn't used, is because it only works with ID strings.
     const eduContainers = document.getElementsByClassName("m-tab-edu-single");
 
     //Detract 1 because the output container has the same class
@@ -329,7 +332,7 @@ async function remoteValidate(event) {
     let options = {
         //Use POST method to create a new resource on the server
         method: 'POST',
-        //Create the request body for the new resource
+        // Create the request body for the new resource
         // JSON.stringify to parse JS code to a JSON object
         body: JSON.stringify({
                     'name': name.value,
@@ -342,17 +345,18 @@ async function remoteValidate(event) {
                     'education': education,
                     'sectors': sectors
                 }),
-        //Set the headers for" the fetch request
+        //Set the headers for the fetch request
         headers: {
             //Let the server know that the body is in JSON format
             'content-type': 'application/json'
         }
     };
-
     let optionsFilled = (name.value !== "" && age.value !== "" &&
                         email.value !== "" && city.value !== "" &&
                         miscText.value !== "") ? true : false;
 
+    // Checks the image url and whether all other required fields  are filled
+    //  Displays an error if the check returns false
     if(checkurl && optionsFilled){
         const response = await fetch("https://syst-api.azurewebsites.net/cv", options);
         //Logs true if fetch worked, false if not

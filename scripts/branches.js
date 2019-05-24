@@ -44,7 +44,7 @@ function onlyThreeChecked(){
     var total = 0;
     var currentCheckbox = event.srcElement;
     var currentIndex = 0;
-    console.log(currentCheckbox);
+    
 
     for(var i = 0; i < checkboxgroup.length; i++){
       if(checkboxgroup[i].checked){
