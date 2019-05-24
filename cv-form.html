@@ -12,6 +12,7 @@
     <link href="styles/normalize.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
     <link href="styles/CV-styles.css" rel="stylesheet">
+    <link href="styles/CV-output-styles.css" rel="stylesheet">
 
     <script src="scripts/add-molecules.js" type="text/javascript" async></script>
     <script src="scripts/branches.js" type="text/javascript" async></script>
@@ -22,7 +23,7 @@
 <body onload="loadBranches()">
 
     <!-- Page for getting all the users data to build a CV -->
-    <div id="in-page" class="container-flex display-block">
+    <div id="in-page" class="container-flex display-none">
         <!--       MAIN CONTAINER              -->
         <main class="main">
 
@@ -193,7 +194,7 @@
 
     <!--  Page for adding all the CV data and displaying it   -->
 
-    <div id="out-page" class="container-flex display-none">
+    <div id="out-page" class="container-flex display-block">
 
         <h2 class="a-titles">Omkring dig</h2>
         <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
@@ -206,47 +207,50 @@
                 <div id="name-out" class="m-basic">
                     <label>Navn</label>
                 </div>
-                <div id="city-out" class="a-basic-city">
+                <div id="age-out" class="a-social-age m-basic">
+                    <label>Alder</label>
+                </div>
+                <div id="city-out" class="a-basic-city m-basic">
                     <label>By</label>
                 </div>
-                <div id="misc-text-out" class="a-basic-misc-text">
+                <div class="m-cv-image">
+                    <img id="image-out" class="image" src="img/no-cv-image.png" alt="Your CV image">
+                </div>
+
+                <div id="misc-text-out" class="a-basic-misc-text m-basic">
                     <label>Om dig</label>
                 </div>
+
             </div>
         </div>
 
+        <hr />
         <!--  CONTAINER FOR CV IMAGE, E-MAIL AND SOCIAL MEDIA LINKS   -->
         <div class="t-img-social">
 
-            <!--    MOLECULE FOR IMAGE          -->
-            <div class="m-cv-image">
-                <img id="image-out" class="image" src="img/no-cv-image.png" alt="Your CV image">
-            </div>
-
             <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
             <div class="m-social">
-                <div id="age-out" class="a-social-age">
-                    <label>Alder</label>
-                </div>
 
-                <hr />
 
                 <h2 class="a-titles">Kontakt mig</h2>
-                <div id="email-out" class="a-social-email">
-                    <label>E-mail</label>
+                <div class="m-social-content">
+                  <div id="email-out" class="a-social-email">
+                      <label>E-mail</label>
+                  </div>
+                  <div class="a-social-facebook">
+                      <div id="Facebook-out" class="facebook">
+                      </div>
+                  </div>
+                  <div class="a-social-twitter">
+                      <div id="Twitter-out" class="twitter">
+                      </div>
+                  </div>
+                  <div class="a-social-linkedin">
+                      <div id="LinkedIn-out" class="linkedin">
+                      </div>
+                  </div>
                 </div>
-                <div class="a-social-facebook">
-                    <div id="Facebook-out" class="facebook">
-                    </div>
-                </div>
-                <div class="a-social-twitter">
-                    <div id="Twitter-out" class="twitter">
-                    </div>
-                </div>
-                <div class="a-social-linkedin">
-                    <div id="LinkedIn-out" class="linkedin">
-                    </div>
-                </div>
+
             </div>
         </div>
 
@@ -265,9 +269,13 @@
         <hr />
         <!-- MOLECULE FOR SECTORS -->
         <h2 class="a-titles">Tidligere erfaring</h2>
-        <div class="m-sectors" id="m-sectors">
+        <div class="m-sector-out">
 
+          <div class="m-sectors" id="m-sectors">
+
+          </div>
         </div>
+
 
         <!--  CONTAINER FOR EDUCATION AND WORK EXPERIENCE  -->
         <div class="t-edu-work">
@@ -322,5 +330,6 @@
             </div>
             -->
         </div>
+    </div>
     </div>
 </body>
