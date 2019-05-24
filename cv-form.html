@@ -1,15 +1,18 @@
 <!--
-    This is the input page of the site.
-    It has a template for the CV inside <main>
-        with inputs for adding data.
-    The form sends to cv-finished.html to display a
-        finished CV.
+    This is the file that contains the input and output pages.
+    The input page is contained in the div with id in-page.
+    The output page is contained in the div with id out-page.
+    Data in the input fields are validated by JavaScript (see: files...)
 -->
-<!DOCTYPE html>
 <html lang="da">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="styles/normalize.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/CV-styles.css" rel="stylesheet">
+
     <script src="scripts/add-molecules.js" type="text/javascript" async></script>
     <script src="scripts/branches.js" type="text/javascript" async></script>
     <script src="scripts/serverValidation.js" type="text/javascript" async></script>
@@ -18,287 +21,316 @@
 </head>
 <body onload="loadBranches()">
 
-        <!-- Page for getting all the users data to build a CV -->
-        <div id="in-page">
-            <!--       MAIN CONTAINER              -->
-            <main class="main container-flex">
+    <!-- Page for getting all the users data to build a CV -->
+    <div id="in-page" class="container-flex">
+        <!--       MAIN CONTAINER              -->
+        <main class="main">
 
-                <form action="" method="POST" id="cv-form">
+            <form id="cv-form">
+              <h1 class="a-titles container-flex">Udfyld dit</h1>
+              <img src="img/NemCV.svg" alt="NEMCV">
+              <h2 class="a-titles">Omkring dig</h2>
+                <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
+                <div class="t-basic-social" >
 
-                    <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
-                    <div class="t-basic-social">
+                    <!--   CONTAINER FOR NAME, CITY AND MISC INFO    -->
+                    <div class="t-basic">
 
-                        <!--   CONTAINER FOR NAME, CITY AND MISC INFO    -->
-                        <div class="t-basic">
+                        <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
+                        <div class="a-basic container-flex">
+                            <label for="name-input" >Navn</label>
+                            <input type="text" id="name-input" class="name" name="name" placeholder="Dit fulde navn" />
 
-                            <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
-                            <div class="m-basic">
-                                <label for="name-input">Navn</label>
-                                <input type="text" id="name-input" class="name" name="name" placeholder="Dit fulde navn" />
+                        </div>
 
-                            </div>
-                            <div class="a-basic-city">
-                                <label for="city-input">By</label>
-                                <input type="text" id="city-input" class="city" name="city" placeholder="Din by"/>
-                            </div>
-                            <div class="a-basic-misc-text">
-                                <label for="misc-text-input">Om dig</label>
-                                <textarea id="misc-text-input" class="misc-text" name="misc-text" placeholder="Noget fritekst om dig, så som interesser eller lignende"></textarea>
-                            </div>
+                        <div class="a-social">
+                            <label for="age-input">Alder</label>
+                            <input type="number" id="age-input" class="age" name="age" placeholder="Din alder i år" min="15" max="120" />
+                        </div>
+
+                        <div class="a-basic" id = "a-basic-city">
+                            <label for="city-input">By</label>
+                            <input type="text" id="city-input" class="city" name="city" placeholder="Din by"/>
+                        </div>
+
+                    </div>
+                    <div class="t-basic">
+                      <!--    MOLECULE FOR IMAGE          -->
+                      <div class="m-cv-image">
+                          <label for="image-input">Billede</label>
+                          <input type="url" id="image-input" class="image" name="image" placeholder="URL til dit CV billede" onblur="checkurl();" />
+                      </div>
+
+                      <div class="a-basic" id = "a-basic-misc-text">
+                          <label for="misc-text-input">Om dig</label>
+                          <textarea id="misc-text-input" class="misc-text" name="misc-text" placeholder="Noget fritekst om dig, så som interesser eller lignende"></textarea>
+                      </div>
+
+                    </div>
+
+
+                </div>
+
+                <hr />
+
+                <h2 class = "a-titles">Kontakt mig</h2>
+                <!--  CONTAINER FOR CV IMAGE, E-MAIL AND SOCIAL MEDIA LINKS   -->
+                <div class="t-social container-flex">
+                  <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
+                  <div class="m-social container-flex">
+
+                        <div class="a-social" id = "a-social-email">
+                            <label for="email-input">E-mail</label>
+                            <input type="email" id="email-input" class="email" name="email" placeholder="din@email.com" />
+                        </div>
+                        <div class="a-social" id = "a-social-facebook">
+                            <label for="facebook-input">Facebook</label>
+                            <input type="url" id="facebook-input" class="facebook" name="facebook" placeholder="Din Facebook" />
                         </div>
                     </div>
 
-                    <!--  CONTAINER FOR CV IMAGE, E-MAIL AND SOCIAL MEDIA LINKS   -->
-                    <div class="t-img-social">
-
-                        <!--    MOLECULE FOR IMAGE          -->
-                        <div class="m-cv-image">
-                            <label for="image-input">Billede</label>
-                            <input type="url" id="image-input" class="image" name="image" placeholder="URL til dit CV billede" onblur="checkurl();" />
+                    <div class="m-social container-flex">
+                        <div class="a-social" id = "a-social-twitter">
+                            <label for="twitter-input">Twitter</label>
+                            <input type="url" id="twitter-input" class="twitter" name="twitter" placeholder="Din Twitter"/>
                         </div>
-
-                        <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
-                        <div class="m-social">
-                            <div class="a-social-age">
-                                <label for="age-input">Alder</label>
-                                <input type="number" id="age-input" class="age" name="age" placeholder="Din alder i år" min="15" max="120" />
-                            </div>
-                            Kontakt mig
-                            <div class="a-social-email">
-                                <label for="email-input">E-mail</label>
-                                <input type="email" id="email-input" class="email" name="email" placeholder="din@email.com" />
-                            </div>
-                            <div class="a-social-facebook">
-                                <label for="facebook-input">Facebook</label>
-                                <input type="url" id="facebook-input" class="facebook" name="facebook" placeholder="Din Facebook" />
-                            </div>
-                            <div class="a-social-twitter">
-                                <label for="twitter-input">Twitter</label>
-                                <input type="url" id="twitter-input" class="twitter" name="twitter" placeholder="Din Twitter"/>
-                            </div>
-                            <div class="a-social-linkedin">
-                                <label for="linkedin-input">LinkedIn</label>
-                                <input type="url" id="linkedin-input" class="linkedin" name="linkedin" placeholder="Din LinkedIn" />
-                            </div>
+                        <div class="a-social" id = "a-social-linkedin">
+                            <label for="linkedin-input">LinkedIn</label>
+                            <input type="url" id="linkedin-input" class="linkedin" name="linkedin" placeholder="Din LinkedIn" />
                         </div>
                     </div>
+                </div>
 
-                    <!-- MOLECULE FOR SKILLS --><!--
-                    <div class="m-skills">
-                        <!-- SKILLS TO BE INSERTED HERE? HIDE IF NO SKILLS?? -->
-                        <!--
-                        <div class="m-tab-skills-single">
-                            <div class="a-tab-skills-single">
-                                Kompetencer...
-                                [SHOULD BE FILLED WITH A SKILL(S)?]
-                                Check boxes??
-                            </div>
+                <!-- MOLECULE FOR SKILLS --><!--
+                <div class="m-skills">
+                    <!-- SKILLS TO BE INSERTED HERE? HIDE IF NO SKILLS?? -->
+                    <!--
+                    <div class="m-tab-skills-single">
+                        <div class="a-tab-skills-single">
+                            Kompetencer...
+                            [SHOULD BE FILLED WITH A SKILL(S)?]
+                            Check boxes??
                         </div>
-                        <button class="a-tab-add-skill" type="button">+</button> <!-- Skal have et ikon eller noget --> <!--
+                    </div>
+                    <button class="a-tab-add-skill" type="button">+</button> <!-- Skal have et ikon eller noget --> <!--
+                </div> -->
+
+                <hr />
+                <!-- MOLECULE FOR SECTORS -->
+                <h2 class = "a-titles container-flex">Tidligere erfaring</h2>
+
+                <label class = "m-sector-title">Brancher</label>
+                <div class="m-sectors container-flex" id="m-branches">
+
+                    <!-- <div class="a-sector">
+                        <!-- DET HER SKAL GØRES BEDRE, DROPDOWN??? --><!--
+                        <label for="sector-1">Branche</label>
+                        <input type="text" class="sector-1" name="sector-1" placeholder="En branche" />
+                    </div>
+                    <div class="a-sector">
+                        <label for="sector-2">Branche</label>
+                        <input type="text" class="sector-2" name="sector-2" placeholder="En branche" />
+                    </div>
+                    <div class="a-sector">
+                        <label for="sector-3">Branche</label>
+                        <input type="text" class="sector-3" name="sector-3" placeholder="En branche" />
                     </div> -->
+                </div>
 
-                    <!-- MOLECULE FOR SECTORS -->
-                    <div class="m-sectors" id="m-branches">
-                        <!-- <div class="a-sector">
-                            <!-- DET HER SKAL GØRES BEDRE, DROPDOWN??? --><!--
-                            <label for="sector-1">Branche</label>
-                            <input type="text" class="sector-1" name="sector-1" placeholder="En branche" />
+
+                <!--  CONTAINER FOR EDUCATION AND WORK EXPERIENCE  -->
+                <div class="t-edu-work">
+
+                    <!-- CONTAINER FOR EDUCATION -->
+                    <div class="m-edu">
+
+                        <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
+                        <div class="m-tab-edu-single">
+                            <h3 class="a-titles"> Udannelse</h3>
+                              <label for="edu-line-1">Studieretning</label>
+                              <input type="text" class="a-tab-edu-single" id="edu-line-1" placeholder="Din studieretning" >
+
+                              <label for="edu-school-1">Skole</label>
+                              <input type="text" class="a-tab-edu-single" id="edu-school-1" placeholder="Institutionen du tog uddannelsen på" >
+
+                              <label for="edu-start-1">Start dato</label>
+                              <input type="date" class="a-tab-edu-single" id="edu-start-1" placeholder="Hvornår du startede denne uddannelse" >
+
+                              <label for="edu-end-1">Slut dato</label>
+                              <input type="date" class="a-tab-edu-single" id="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
                         </div>
-                        <div class="a-sector">
-                            <label for="sector-2">Branche</label>
-                            <input type="text" class="sector-2" name="sector-2" placeholder="En branche" />
-                        </div>
-                        <div class="a-sector">
-                            <label for="sector-3">Branche</label>
-                            <input type="text" class="sector-3" name="sector-3" placeholder="En branche" />
-                        </div> -->
+
+                        <button class="a-tab-add-molecule" id="a-tab-add-edu" type="button" onclick="addNewEduMolecule()">+</button> <!-- Skal have et ikon eller noget -->
                     </div>
 
-                    <!--  CONTAINER FOR EDUCATION AND WORK EXPERIENCE  -->
-                    <div class="t-edu-work">
 
-                        <!-- CONTAINER FOR EDUCATION -->
-                        <div class="m-edu">
+                    <!-- CONTAINER FOR WORK -->
+                    <div class="m-work">
+                      <h3 class="a-titles">Erhvervserfaring</h3>
+                        <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
+                        <div class="m-tab-work-single">
+                            <label for="work-title-1">Titel</label>
+                            <input type="text" class="a-tab-work-single" id="work-title-1" placeholder="Din jobtitel fra dette arbejde" >
 
-                            <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
-                            <div class="m-tab-edu-single">
-                                <label for="edu-line-1">Studieretning</label>
-                                <input type="text" class="a-tab-edu-single-line" id="edu-line-1" placeholder="Din studieretning" >
+                            <label for="work-company-1">Firma</label>
+                            <input type="text" class="a-tab-work-single" id="work-company-1" placeholder="Din arbejdsgiver fra dette arbejde" >
 
-                                <label for="edu-school-1">Skole</label>
-                                <input type="text" class="a-tab-edu-single-school" id="edu-school-1" placeholder="Institutionen du tog uddannelsen på" >
+                            <label for="work-start-1">Start dato</label>
+                            <input type="date" class="a-tab-work-single" id="work-start-1" placeholder="Hvornår du startede dette arbejde" >
 
-                                <label for="edu-start-1">Start dato</label>
-                                <input type="date" class="a-tab-edu-single-start-date" id="edu-start-1" placeholder="Hvornår du startede denne uddannelse" >
-
-                                <label for="edu-end-1">Slut dato</label>
-                                <input type="date" class="a-tab-edu-single-end-date" id="edu-end-1" placeholder="Hvornår du stoppede denne uddannelse" >
-                            </div>
-
-                            <button id="a-tab-add-edu" type="button" onclick="addNewEduMolecule()">+</button> <!-- Skal have et ikon eller noget -->
+                            <label for="work-end-1">Slut dato</label>
+                            <input type="date" class="a-tab-work-single" id="work-end-1" placeholder="Hvornår du stoppede dette arbejde" >
                         </div>
 
-                        <!-- CONTAINER FOR WORK -->
-                        <div class="m-work">
-                            <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
-                            <div class="m-tab-work-single">
-                                <label for="work-title-1">Titel</label>
-                                <input type="text" class="a-tab-work-single-title" id="work-title-1" placeholder="Din jobtitel fra dette arbejde" >
-
-                                <label for="work-company-1">Firma</label>
-                                <input type="text" class="a-tab-work-single-company" id="work-company-1" placeholder="Din arbejdsgiver fra dette arbejde" >
-
-                                <label for="work-start-1">Start dato</label>
-                                <input type="date" class="a-tab-work-single-start-date" id="work-start-1" placeholder="Hvornår du startede dette arbejde" >
-
-                                <label for="work-end-1">Slut dato</label>
-                                <input type="date" class="a-tab-work-single-end-date" id="work-end-1" placeholder="Hvornår du stoppede dette arbejde" >
-                            </div>
-
-                            <button id="a-tab-add-work" type="button" onclick="addNewWorkMolecule()">+</button> <!-- Skal have et ikon eller noget -->
-                        </div>
+                        <button class="a-tab-add-molecule" id="a-tab-add-work" type="button" onclick="addNewWorkMolecule()">+</button> <!-- Skal have et ikon eller noget -->
                     </div>
+                </div>
 
-                    <input type="submit" id="submit-button" onclick="remoteValidate(event)" value="Send"/>
+                <input type="submit" class="submit-button" id="submit-button" onclick="remoteValidate(event)" value="Send"/>
 
-                </form>
-            </main>
+            </form>
+        </main>
+    </div>
+
+    <!--  Page for adding all the CV data and displaying it   -->
+
+    <div id="out-page" class="container-flex">
+
+        <h2 class="a-titles">Omkring dig</h2>
+        <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
+        <div class="t-basic-social">
+
+            <!--   CONTAINER FOR NAME, CITY AND MISC INFO    -->
+            <div class="t-basic">
+
+                <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
+                <div class="m-basic">
+                    <label>Navn</label>
+                    <div id="name-out" class="name">
+                    </div>
+                </div>
+                <div class="a-basic-city">
+                    <label>By</label>
+                    <div id="city-out" class="city">
+                    </div>
+                </div>
+                <div class="a-basic-misc-text">
+                    <label>Om dig</label>
+                    <div id="misc-text-out" class="misc-text">
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!--  Page for adding all the CV data and displaying it   -->
-        <div id="out-page">
+        <!--  CONTAINER FOR CV IMAGE, E-MAIL AND SOCIAL MEDIA LINKS   -->
+        <div class="t-img-social">
 
-            <!--    CONTAINER FOR THE BASIC PERSONAL INFO      -->
-            <div class="t-basic-social">
+            <!--    MOLECULE FOR IMAGE          -->
+            <div class="m-cv-image">
+                <img id="image-out" class="image" src="img/no-cv-image.png" alt="Your CV image">
+            </div>
 
-                <!--   CONTAINER FOR NAME, CITY AND MISC INFO    -->
-                <div class="t-basic">
-
-                    <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
-                    <div class="m-basic">
-                        <label id="name-output">Navn: </label>
-                        <div id="name-out" class="name">
-                        </div>
+            <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
+            <div class="m-social">
+                <div class="a-social-age">
+                    <label>Alder</label>
+                    <div id="age-out" class="age">
                     </div>
-                    <div class="a-basic-city">
-                        <label id="city-output">By</label>
-                        <div id="city-out" class="city">
-                        </div>
+                </div>
+
+                <hr />
+                <h2 class="a-titles">Kontakt mig</h2>
+                <div class="a-social-email">
+                    <label>E-mail</label>
+                    <div id="email-out" class="email">
                     </div>
-                    <div class="a-basic-misc-text">
-                        <label id="misc-text-output">Om dig</label>
-                        <div id="misc-text-out" class="misc-text">
-                        </div>
+                </div>
+                <div class="a-social-facebook">
+                    <div id="Facebook-out" class="facebook">
+                    </div>
+                </div>
+                <div class="a-social-twitter">
+                    <div id="Twitter-out" class="twitter">
+                    </div>
+                </div>
+                <div class="a-social-linkedin">
+                    <div id="LinkedIn-out" class="linkedin">
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!--  CONTAINER FOR CV IMAGE, E-MAIL AND SOCIAL MEDIA LINKS   -->
-            <div class="t-img-social">
-
-                <!--    MOLECULE FOR IMAGE          -->
-                <div class="m-cv-image">
-                    <img id="image-out" class="image" src="img/no-cv-image.png" alt="Your CV image">
-                </div>
-
-                <!--    MOLECULE FOR AGE AND SOCIAL MEDIA     -->
-                <div class="m-social">
-                    <div class="a-social-age">
-                        <label id="age-output">Alder</label>
-                        <div id="age-out" class="age">
-                        </div>
-                    </div>
-                    Kontakt mig
-                    <div class="a-social-email">
-                        <label id="email-output">E-mail</label>
-                        <div id="email-out" class="email">
-                        </div>
-                    </div>
-                    <div id="Facebook-out" class="a-social-facebook">
-                        <!-- Once again, template for dynamically generated tags
-                        <label>Facebook</label>
-                        <div id="facebook-out" class="facebook">
-                        </div>
-                        -->
-                    </div>
-                    <div id="Twitter-out" class="a-social-twitter">
-                        <!-- Once again, template for dynamically generated tags
-                        <label>Twitter</label>
-                        <div id="twitter-out" class="twitter">
-                        </div>
-                        -->
-                    </div>
-                    <div id="LinkedIn-out" class="a-social-linkedin">
-                        <!-- Once again, template for dynamically generated tags
-                        <label>LinkedIn</label>
-                        <div id="linkedin-out" class="linkedin">
-                        </div>
-                        -->
-                    </div>
+        <!-- MOLECULE FOR SKILLS --> <!--
+        <div class="m-skills">
+            <!-- SKILLS TO BE INSERTED HERE? HIDE IF NO SKILLS?? --><!--
+            <div class="m-tab-skills-single">
+                <div class="a-tab-skills-single">
+                    Kompetencer...
+                    [SHOULD BE FILLED WITH A SKILL(S)?]
+                    Check boxes??
                 </div>
             </div>
+        </div> -->
 
-            <!-- MOLECULE FOR SKILLS --> <!--
-            <div class="m-skills">
-                <!-- SKILLS TO BE INSERTED HERE? HIDE IF NO SKILLS?? --><!--
-                <div class="m-tab-skills-single">
-                    <div class="a-tab-skills-single">
-                        Kompetencer...
-                        [SHOULD BE FILLED WITH A SKILL(S)?]
-                        Check boxes??
+        <hr />
+        <!-- MOLECULE FOR SECTORS -->
+        <h2 class="a-titles">Tidligere erfaring</h2>
+        <div class="m-sectors" id="m-sectors">
+
+        </div>
+
+        <!--  CONTAINER FOR EDUCATION AND WORK EXPERIENCE  -->
+        <div class="t-edu-work">
+
+            <!-- CONTAINER FOR EDUCATION -->
+            <div class="m-edu" id="m-edu">
+
+                <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   --><!--
+                <div class="m-tab-edu-single">
+
+                    <label>Studieretning</label>
+                    <div class="a-tab-edu-single-line">
                     </div>
-                </div>
-            </div> -->
 
-            <!-- MOLECULE FOR SECTORS -->
-            <div class="m-sectors" id="m-sectors">
-                <!-- Sector atoms are dynamically generated -->
-            </div>
-
-            <!--  CONTAINER FOR EDUCATION AND WORK EXPERIENCE  -->
-            <div class="t-edu-work">
-
-                <!-- CONTAINER FOR EDUCATION -->
-                <div class="m-edu" id="m-edu">
-
-                    <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
-                    <!-- Dynamically generated, this is just the template
-                    <div class="m-tab-edu-single">
-                        <label>Studieretning</label>
-                        <span>SWU</span>
-
-                        <label>Skole</label>
-                        <span>ITU</span>
-
-                        <label>Periode</label>
-                        <span>12-5-2017 - 30-2-2035</span>
+                    <label>Skole</label>
+                    <div class="a-tab-edu-single-school">
                     </div>
-                    -->
-                </div>
 
-                <!-- CONTAINER FOR WORK -->
-                <div class="m-work" id="m-work">
-                    <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
-                    <!-- just the template again
-                    <div class="m-tab-work-single">
-                        <label>Titel</label>
-                        <div class="a-tab-work-single-line">
-                        </div>
+                    <label>Start dato</label>
+                    <div class="a-tab-edu-single-start-date">
+                    </div>
 
-                        <label>Firma</label>
-                        <div class="a-tab-work-single-school">
-                        </div>
-
-                        <label>Start dato</label>
-                        <div class="a-tab-work-single-start-date">
-                        </div>
-
-                        <label>Slut dato</label>
-                        <div class="a-tab-work-single-end-date">
-                        </div>
+                    <label>Slut dato</label>
+                    <div class="a-tab-edu-single-end-date">
                     </div>
                     -->
                 </div>
             </div>
+
+            <!-- CONTAINER FOR WORK -->
+            <div class="m-work" id="m-work">
+                <!--
+                <h3 class="a-titles">Erhvervserfaring</h3>
+                <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   --><!--
+                <div class="m-tab-work-single">
+                    <label>Titel</label>
+                    <div class="a-tab-work-single-line">
+                    </div>
+
+                    <label>Firma</label>
+                    <div class="a-tab-work-single-school">
+                    </div>
+
+                    <label>Start dato</label>
+                    <div class="a-tab-work-single-start-date">
+                    </div>
+
+                    <label>Slut dato</label>
+                    <div class="a-tab-work-single-end-date">
+                    </div>
+                </div>
+            </div>
+            -->
         </div>
+    </div>
 </body>
