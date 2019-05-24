@@ -146,13 +146,13 @@ function setupJobs() {
 function setupSocial(json) {
     for(key of Object.keys(json)) {
         if(json[key] !== "") {
-            const label = document.createElement("label");
-            label.innerHTML = key;
+            //const label = document.createElement("label");
 
-            const span = document.createElement("span");
-            span.innerHTML = json[key];
+            const span = document.createElement("a");
+            span.href = json[key];
+            span.innerHTML = key;
 
-            getElement(key+"-out").appendChild(label);
+            //getElement(key+"-out").appendChild(label);
             getElement(key+"-out").appendChild(span);
         }
     }
@@ -203,9 +203,16 @@ async function apply_all(json){
     //arrays refer to the same element. (So they create pairs.)
     for (let i = 0; i < idFields.length; i++) {
         if(jsonFields[i].value !== "") {
-            const span = document.createElement("span");
-            span.innerHTML = jsonFields[i];
-            getElement(idFields[i]).appendChild(span);
+            if(idFields[i] !== "email-out") {
+                const span = document.createElement("span");
+                span.innerHTML = jsonFields[i];
+                getElement(idFields[i]).appendChild(span);
+            } else {
+                const a = document.createElement("a");
+                a.href = jsonFields[i];
+                a.innerHTML = jsonFields[i];
+                getElement(idFields[i]).appendChild(a);
+            }
         }
     }
     //image is in its own, since src and innerHTML is not the same.
