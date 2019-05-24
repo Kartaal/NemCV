@@ -24,9 +24,6 @@
 @import url('styles/tablet-media-queries.css');
 @import url('styles/desktop-media-queries.css');
 
-
-
-
 /* 3. Properties for overordnet elementer/molekyler */
 
 body{
@@ -39,7 +36,7 @@ body{
       margin-left: auto;
       margin-right: auto;
       width: 96vw;
-      height: 200VH;
+      height: 100vh;
       background-color: rgba(255,255,255,1.0);
 
     }
@@ -63,6 +60,7 @@ body{
     }
 
     .m-buttons-row{
+      padding-top: 1em;
       display: inline-flex;
       width: 100%;
       margin: auto;

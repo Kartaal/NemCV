@@ -3,13 +3,15 @@
 @media screen 
 and (max-device-width: 400px) 
 and (min-device-width: 360px)
-and (orientation: portrait){
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait)
+{
 
   main{
     margin-left: auto;
     margin-right: auto;
     width: 96vw;
-    height: 200VH;
+    height: 100vh;
     background-color: rgba(255,255,255,1.0);
 
   }
@@ -83,12 +85,8 @@ and (orientation: portrait){
   }
 
   .m-button-container{
-    display: flex;
     flex-wrap: wrap;
-    width: 50vw;
-    justify-content: center;
-    margin: auto;
-  }
+	}
 
   .a-collapsible-button {
     position: relative;
