@@ -18,6 +18,7 @@ function newActualWorkMolecule(json){
 
     const actualContainer = document.createElement("div");
     actualContainer.classList.add("m-tab-edu-single");
+    actualContainer.classList.add("m-work-output");
 
     const header = document.createElement("h3");
     header.classList.add("a-titles");
@@ -62,6 +63,7 @@ function newActualEduMolecule(json){
 
     const actualContainer = document.createElement("div");
     actualContainer.classList.add("m-tab-edu-single");
+    actualContainer.classList.add("m-edu-output");
 
     const header = document.createElement("h3");
     header.classList.add("a-titles");
