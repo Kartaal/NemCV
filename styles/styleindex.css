@@ -1,0 +1,209 @@
+/* Indholdfortegnelse:
+
+  1. Settings, colors and media query stylesheet imports
+  2. Font import
+  3. Properties for overordnet elementer/molekyler
+  4. Container-flex klasse og Main klasse
+  5.
+  6.
+  7.
+  8.
+  9.
+  10.
+  11.
+  12.
+
+  */
+
+
+/* 1. ettings, colors and media query stylesheet imports */
+
+@import url('colors.css');
+@import url('settings.css');
+@import url('mobile-media-queries.css');
+@import url('tablet-media-queries.css');
+@import url('desktop-media-queries.css');
+
+/* 3. Properties for overordnet elementer/molekyler */
+
+body{
+
+      background-color: #22293A;
+
+    }
+
+    main{
+      margin-left: auto;
+      margin-right: auto;
+      width: 96vw;
+      height: 100vh;
+      background-color: rgba(255,255,255,1.0);
+
+    }
+
+    h1{
+      display: flex;
+      margin: auto;
+      text-align: center;
+      font-size: 3em;
+      font-family: 'Roboto', sans-serif;
+      color: var(--text-header);
+    }
+
+    div.a-logo{
+      position: relative;
+      margin: auto;
+      width: 60%;
+      height: 15vh;
+      display: block;
+      top: 0%;
+    }
+
+    .m-buttons-row{
+      padding-top: 1em;
+      display: inline-flex;
+      width: 100%;
+      margin: auto;
+      height: 20vh;
+    }
+
+    .a-entry-button-container,
+    .a-another-button-container{
+      display: flex;
+      margin: auto;
+      background-color: var(--test-color);
+      height: 20vh;
+      width: 100%;
+    }
+
+    .a-entry-button{
+      display: flex;
+      margin: auto;
+      width: 30vw;
+      background-color: var(--button-color);
+      border: none;
+      border-radius: 10px;
+      color: var(--text-color);
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      justify-content: center;
+    }
+
+    .a-introduction-container{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 20vh;
+      width: 100%;
+      margin: auto;
+      background-color: var(--test-color);
+    }
+
+    .a-logo-container{
+      margin-top: -10vh;
+      display: flex;
+      height: 30vh;
+      width: 100%;
+    }
+
+    section.m-introduction-buttons-container{
+      height: 40vh;
+      width: 100%;
+      margin: auto;
+      background-color: var(--test-color);
+    }
+
+    p.a-collapsible-text-content{
+
+
+
+    }
+
+    section{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .m-collapsible{
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      width: 100%;
+      height: inherit;
+    }
+
+    .m-collapsible-container{
+      display: flex;
+      width: 40vw;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto;
+    }
+
+    .a-collapsible-button {
+      position: relative;
+      display: flex;
+      z-index: 1;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--button-color);
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      border-color: var(--button-color);
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .active, .a-collapsible-button:hover {
+      background-color: #555;
+    }
+
+    .text-box-transition{
+      -webkit-transition: height 2s;
+      transition: height 2s;
+    }
+
+    .a-collapsible-text {
+      position: relative;
+      z-index: 0;
+      padding: 0 18px;
+      display: none;
+      overflow: hidden; 
+      margin-top: -10px;
+      background-color: #B2BACD;
+      border-radius: 0px 0px 10px 10px;
+    }
+
+    .a-collapsible-text-content{
+      font-family: 'Roboto', sans-serif;
+    }
+
+    #triangle-down{
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 12px solid white;    
+      margin-left: auto;
+      margin-bottom: auto;
+      margin-top: auto;
+    }
+
+
+    .test-color-one{
+
+    background-color: var(--test-color);
+
+    }
+
+    .test-color-two{
+
+    background-color: var(--test-color);
+
+      
+    }
