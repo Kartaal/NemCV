@@ -15,176 +15,198 @@
   */
 
 @import url('styles/colors.css');
+@import url('styles/settings.css');
+@import url('styles/mobile-media-queries.css');
+@import url('styles/desktop-media-queries.css');
 
-@media only screen and (min-width: 400px){
+body{
 
-  body{
+      background-color: #22293A;
 
-    background-color: #22293A;
+    }
 
-  }
+    main{
+      margin-left: auto;
+      margin-right: auto;
+      width: 96vw;
+      height: 200VH;
+      background-color: rgba(255,255,255,1.0);
 
-  main{
-    margin-left: auto;
-    margin-right: auto;
-    width: 96vw;
-    height: 200VH;
-    background-color: rgba(255,255,255,1.0);
+    }
 
-  }
-
-  h1{
-    display: flex;
-    margin: auto;
-    text-align: center;
-    font-size: 2em;
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-header);
-  }
+    h1{
+      display: flex;
+      margin: auto;
+      text-align: center;
+      font-size: 3em;
+      font-family: 'Roboto', sans-serif;
+      color: var(--text-header);
+    }
 
     div.a-logo{
-    margin: auto;
-    width: 20vw;
-    height: 10%;
-  }
+      margin: auto;
+      width: 60%;
+      height: 15vh;
+      display: block;
+    }
+
+    .m-buttons-row{
+      display: inline-flex;
+      width: 100%;
+      margin: auto;
+      height: 20vh;
+    }
+
+    .a-entry-button-container,
+    .a-another-button-container{
+      display: flex;
+      margin: auto;
+      background-color: var(--test-color);
+      height: 20vh;
+      width: 100%;
+    }
 
     .a-entry-button{
-    display: flex;
-    margin: auto;
-    width: 50vw;
-    background-color: var(--button-color);
-    border: none;
-    border-radius: 10px;
-    color: var(--text-color);
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    justify-content: center;
-  }
+      display: flex;
+      margin: auto;
+      width: 30vw;
+      background-color: var(--button-color);
+      border: none;
+      border-radius: 10px;
+      color: var(--text-color);
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      justify-content: center;
+    }
+
+    .a-introduction-container{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 20vh;
+      width: 100%;
+      margin: auto;
+      background-color: var(--test-color);
+    }
+
+    .a-logo-container{
+      display: flex;
+      height: 30vh;
+      width: 100%;
+    }
+
+    section.m-introduction-buttons-container{
+      height: 40vh;
+      width: 100%;
+      margin: auto;
+      background-color: var(--test-color);
+    }
+
+    p.a-collapsible-text-content{
 
 
-  .a-introduction-container{
-    display: flex;
-    flex-direction: column;
-    height: 20vh;
-    width: 100%;
-    margin: auto;
-    background-color: rgba(110,120,5,0.1);
-  }
 
-  section.m-introduction-buttons-container{
-    height: 70vh;
-    width: 100%;
-    margin: auto;
-    background-color: rgba(110,150,5,0.5);
-  }
+    }
 
-  p.a-collapsible-text-content{
+    section{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
+    .m-collapsible{
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      width: 100%;
+      height: inherit;
+    }
 
+    .m-button-container{
+      display: flex;
+      width: 40vw;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto;
+    }
 
-  }
+    .a-collapsible-button {
+      position: relative;
+      display: flex;
+      z-index: 1;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--button-color);
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      border-color: var(--button-color);
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
 
-  section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+    .active, .a-collapsible-button:hover {
+      background-color: #555;
+    }
 
-  .m-collapsible{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    width: 100%;
-    height: inherit;
-  }
+    .text-box-transition{
+      -webkit-transition: height 2s;
+      transition: height 2s;
+    }
 
-  .m-button-container{
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
-    justify-content: center;
-    margin: auto;
-  }
+    .a-collapsible-text {
+      position: relative;
+      z-index: 0;
+      padding: 0 18px;
+      display: none;
+      overflow: hidden; 
+      margin-top: -10px;
+      background-color: #B2BACD;
+      border-radius: 0px 0px 10px 10px;
+    }
 
-  .a-collapsible-button {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    z-index: 1;
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--button-color);
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    border-color: var(--button-color);
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-  }
+    .a-collapsible-text-content{
+      font-family: 'Roboto', sans-serif;
+    }
 
-  .active, .a-collapsible-button:hover {
-    background-color: #555;
-  }
-
-  .text-box-transition{
-    -webkit-transition: height 2s;
-    transition: height 2s;
-  }
-
-  .a-collapsible-text {
-    position: relative;
-    z-index: 0;
-    padding: 0 18px;
-    display: none;
-    overflow: hidden; 
-    margin-top: -10px;
-    background-color: #B2BACD;
-    border-radius: 0px 0px 10px 10px;
-  }
-
-  .a-collapsible-text-content{
-    font-family: 'Roboto', sans-serif;
-  }
-
-  #triangle-down{
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 12px solid white;    
-    margin-left: auto;
-    margin-bottom: auto;
-    margin-top: auto;
-  }
+    #triangle-down{
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 12px solid white;    
+      margin-left: auto;
+      margin-bottom: auto;
+      margin-top: auto;
+    }
 
 
-  .test-color-one{
+    .test-color-one{
 
-  background-color: rgba(150,50,15,0.4);
+    background-color: var(--test-color);
 
-  }
+    }
 
-  .test-color-two{
+    .test-color-two{
 
-  background-color: rgba(150,200,15,0.4);
+    background-color: var(--test-color);
 
-    
-  }
-
-}
+      
+    }
 
 
-@media only screen and (max-width: 360px){
 
-  body{
 
-    background-color: #22293A;
 
-  }
+/* mobile-first media queries */
+
+@media screen 
+and (max-device-width: 400px) 
+and (min-device-width: 360px)
+and (orientation: portrait){
 
   main{
     margin-left: auto;
@@ -202,6 +224,12 @@
     font-size: 2em;
     font-family: 'Roboto', sans-serif;
     color: var(--text-header);
+  }
+
+  .m-buttons-row{
+
+    display: inline-flex;
+
   }
 
   div.a-logo{
@@ -226,7 +254,6 @@
 
   .a-introduction-container{
     display: flex;
-    flex-direction: column;
     height: 20vh;
     width: 100%;
     margin: auto;
@@ -235,7 +262,6 @@
 
   section.m-introduction-buttons-container{
     height: 70vh;
-    width: 100%;
     margin: auto;
     background-color: rgba(110,150,5,0.5);
   }
@@ -248,13 +274,11 @@
 
   section{
     display: flex;
-    flex-direction: column;
     justify-content: center;
   }
 
   .m-collapsible{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     margin: auto;
     width: 100%;
@@ -263,7 +287,7 @@
 
   .m-button-container{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     width: 50vw;
     justify-content: center;
     margin: auto;
@@ -272,7 +296,6 @@
   .a-collapsible-button {
     position: relative;
     display: flex;
-    flex-direction: row;
     z-index: 1;
     font-family: 'Roboto', sans-serif;
     background-color: var(--button-color);
@@ -286,6 +309,7 @@
     text-align: left;
     outline: none;
     font-size: 15px;
+    width: 70vw;
   }
 
   .active, .a-collapsible-button:hover {

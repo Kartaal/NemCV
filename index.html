@@ -12,6 +12,9 @@
     <!-- Set device viewport and scale -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+    <!-- smart phone detection -->
+    <meta name="format-detection" content="telephone=yes"/>
+
     <!-- Reset all the normal webbrowser CSS properties -->
     <link href="styles/normalize.css" rel="stylesheet">
 
@@ -21,7 +24,7 @@
     <!-- Google fonts import -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
-    <script type="text/javascript" src = "scripts/index.js">  </script>
+    <script type="text/javascript" src="scripts/index.js"></script>
 </head>
 <body onload = "collapsible()">
         <!--       MAIN CONTAINER              -->
@@ -32,9 +35,11 @@
                         <h1 class="a-introduction-text-header">Velkommen</h1>
                         <h1 class="a-introduction-text-header">til</h1>                        
                     </div>
-                    <div class="a-logo">
-                        <object type="image/svg+xml" data="img/NemCV.svg">                            
-                        </object>
+                    <div class="a-logo-container">
+                        <div class="a-logo">
+                            <object type="image/svg+xml" data="img/NemCV.svg">                            
+                            </object>
+                        </div>
                     </div>
             </section>
 
@@ -47,32 +52,36 @@
                     </button>
                 </div>
 
-                <!--   EXPLANATORY COLLAPSIBLE    -->
-                <div class="m-collapsible test-color-one">
-                    <div class="m-button-container">
-                        <button type="button" class = "a-collapsible-button">Omkring NEMCV <div id="triangle-down"></div></button>
-                        <div class="a-collapsible-text">
-                          <p class="a-collapsible-text-content">Her vil der stå en fin tekst omkring NEMCV. Sikke en fin tekst</p>
+                <div class="m-buttons-row">
+                    <!--   EXPLANATORY COLLAPSIBLE    -->
+                    <div class="m-collapsible test-color-one">
+                        <div class="m-button-container">
+                            <button type="button" class = "a-collapsible-button">Omkring NEMCV <div id="triangle-down"></div></button>
+                            <div class="a-collapsible-text">
+                              <p class="a-collapsible-text-content">Her vil der stå en fin tekst omkring NEMCV. Sikke en fin tekst</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!--      HOW TO USE COLLAPSIBLE                  -->
-                <div class="m-collapsible test-color-two">
-                    <div class="m-button-container test-color-two">
-                        <button type="button" class = "a-collapsible-button">Hvordan fungere det?<div id="triangle-down"></div></button>
-                        <div class="a-collapsible-text">
-                          <p class="a-collapsible-text-content">En forklaring af hvordan det her nemcv egentlig fungere. Hvis det gør</p>
+                    <!--      HOW TO USE COLLAPSIBLE                  -->
+                    <div class="m-collapsible test-color-two">
+                        <div class="m-button-container test-color-two">
+                            <button type="button" class = "a-collapsible-button">Hvordan fungere det?<div id="triangle-down"></div></button>
+                            <div class="a-collapsible-text">
+                              <p class="a-collapsible-text-content">En forklaring af hvordan det her nemcv egentlig fungere. Hvis det gør</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!--     Entry button to access CV page       -->
-                <div class="a-entry-button">
-                    <button>
+                <!--
+                <div class="a-another-button-container">
+                    <button type="button" class="a-entry-button">
                         <p>Kom i gang</p>
                     </button>
                 </div>
+                -->
             </section>
         </main>
 </body>
