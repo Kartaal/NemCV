@@ -12,8 +12,13 @@ async function loadBranches() {
   for(var i = 0; i < json.length; i++){
 
     var opt = json[i];
+
+    var checkboxContainer = document.createElement("div")
+    checkboxContainer.className = "m-sector-container"
+
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.className = "a-sector-checkbox";
     checkbox.name = opt;
     checkbox.id = "sector-"+i;
     checkbox.classList.add("sector");
@@ -24,8 +29,10 @@ async function loadBranches() {
     label.htmlFor = "sector-"+i;
     label.appendChild(document.createTextNode(opt));
 
-    select.appendChild(checkbox);
-    select.appendChild(label);
+    checkboxContainer.appendChild(checkbox);
+    checkboxContainer.appendChild(label);
+
+    select.appendChild(checkboxContainer);
   }
   return json;
 }
