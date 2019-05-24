@@ -20,20 +20,20 @@
 @import url('colors.css');
 
 
-body{
+body {
 
 	/*background-color: rgba(255,0,0,0.2);*/
 	background-color: rgba(255,255,255,1.0);
 }
 
 
-main{
+main {
 
 
 }
 
 
-h1{
+h1 {
 
 	color: var(--text-header);
 	font-family: 'Roboto', sans-serif;
@@ -41,7 +41,7 @@ h1{
 }
 
 
-p{
+p {
 	/*
 	color: var(--text-color);*/
 	color: white;
@@ -53,7 +53,7 @@ p{
 
 /* 2. container-flex klasse */
 
-.main{
+#in-page, #out-page {
 
 	margin: auto;
 	width: 80%;
@@ -66,7 +66,7 @@ p{
 
 /*  */
 
-section.m-introduction-text{
+section.m-introduction-text {
 
 	margin: auto;
 	width: inherit;
@@ -75,7 +75,7 @@ section.m-introduction-text{
 
 }
 
-div.a-introduction-container{
+div.a-introduction-container {
 
 	display: flex;
 	width: 50%;
@@ -85,7 +85,7 @@ div.a-introduction-container{
 
 }
 
-h1.a-introduction-text-header{
+h1.a-introduction-text-header {
 
 	display: flex;
 	margin: auto;
@@ -97,7 +97,7 @@ h1.a-introduction-text-header{
 }
 
 
-section.m-introduction-buttons-container{
+section.m-introduction-buttons-container {
 
 	height: 100vh;
 	width: 100%;
@@ -105,14 +105,13 @@ section.m-introduction-buttons-container{
 
 }
 
-
-div.a-entry-button{
+div.a-entry-button {
 
 	width: 100%;
 	height: 5vh;
 }
 
-div.m-collapsible{
+div.m-collapsible {
 	width: 100%;
 	height: 5vh;
 	display: flex;
@@ -130,13 +129,13 @@ div.a-collapsible-text {
   background-color: #B2BACD;
 }
 
-.m-collapsible p{
+.m-collapsible p {
 
 	margin: auto;
 
 }
 
-button{
+button {
 
 	background-color: var(--button-color);
 	border: solid 1.2px var(--border-color);
@@ -152,7 +151,9 @@ button{
 }
 
 
-@media only screen and (max-width: 360px){
+
+
+@media only screen and (max-width: 414px) {
 
 	body{}
 

@@ -1,17 +1,20 @@
 /* Favervariabler til websiden */
 
 :root{
-	
+
 	--text-header: black;
 	--text-color: white;
 	--button-color: #3B4663;
+	--button-hover-color: #7FB069;
+	--submit-hover-color: #0A81D1;
 
-	/* reserved for potenially other boxes 
+	/* reserved for potenially other boxes
 	--button-two: rgba();
 	*/
 
 	--drop-shadow-on-boxes: #B2BACD;
 	--border-color: #22293A;
 	--test-color: white;
-
+	--border-hover-color: #74A060;
+	--border-submit-hover-color: #0A76BE;
 }

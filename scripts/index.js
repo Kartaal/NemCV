@@ -1,5 +1,5 @@
 function collapsible() {
-
+// Collapsible control script.
   var coll = document.getElementsByClassName("a-collapsible-button");
   var i;
 
