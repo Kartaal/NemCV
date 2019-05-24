@@ -142,7 +142,7 @@ function setupJobs() {
     sectorsContainer.parentElement.insertBefore(titleLabel, sectorsContainer);
 }
 
-//
+//Sets up the social media elements for the sites filled
 function setupSocial(json) {
     for(key of Object.keys(json)) {
         if(json[key] !== "") {
@@ -156,6 +156,20 @@ function setupSocial(json) {
             getElement(key+"-out").appendChild(span);
         }
     }
+}
+
+//Swaps so the out page is displayed
+function toggleOutPage(){
+    const inPage = getElement("in-page");
+    const outPage = getElement("out-page");
+
+    inPage.classList.toggle("display-block");
+    inPage.classList.toggle("display-none");
+    outPage.classList.toggle("display-block");
+    outPage.classList.toggle("display-none");
+
+    //Scroll to the top to "mimic" a page load
+    window.scrollTo(0, 0);
 }
 
 //Validates an Image Input value for a valid URL that leads to an image.
@@ -188,7 +202,11 @@ async function apply_all(json){
     //Iterates over both arrays. Both arrays are set up so that index[x] in both
     //arrays refer to the same element. (So they create pairs.)
     for (let i = 0; i < idFields.length; i++) {
-        apply(getElement(idFields[i]), jsonFields[i])
+        if(jsonFields[i].value !== "") {
+            const span = document.createElement("span");
+            span.innerHTML = jsonFields[i];
+            getElement(idFields[i]).appendChild(span);
+        }
     }
     //image is in its own, since src and innerHTML is not the same.
     getElement("image-out").src = json.picture;
@@ -323,18 +341,25 @@ async function remoteValidate(event) {
             'content-type': 'application/json'
         }
     };
-    //if(checkurl){
-    const response = await fetch("https://syst-api.azurewebsites.net/cv", options);
-    //Logs true if fetch worked, false if not
-    //console.log(response.ok);
 
-    const package = JSON.parse(options.body)
-    //Logs the JSON object that is the body of the fetch
-    //console.log(package)
+    let optionsFilled = (name.value !== "" && age.value !== "" &&
+                        email.value !== "" && city.value !== "" &&
+                        miscText.value !== "") ? true : false;
 
-    apply_all(package);
-    setupSocial(socialURLs);
-//} else {
-    //alert("ERROR: Something went wrong.");
-//}
+    if(checkurl && optionsFilled){
+        const response = await fetch("https://syst-api.azurewebsites.net/cv", options);
+        //Logs true if fetch worked, false if not
+        //console.log(response.ok);
+
+        const package = JSON.parse(options.body)
+        //Logs the JSON object that is the body of the fetch
+        //console.log(package)
+
+        apply_all(package);
+        setupSocial(socialURLs);
+
+        toggleOutPage();
+    } else {
+        alert("ERROR: You didn't fill out some basic personal information or the link to your profile image couldn't be verified.");
+    }
 }
