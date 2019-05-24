@@ -167,6 +167,11 @@ label {
 		justify-content: space-evenly;
 
 	}
+	.t-img-social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
 
 	.m-edu, .m-work, .t-basic, .m-social{
