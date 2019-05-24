@@ -12,7 +12,12 @@ span, a{
 }
 
 @media only screen and (min-width: 415px) {
-  
+
+  .m-sector-output{
+    width: 75%;
+    margin: auto;
+  }
+
   label{
     width: 99.4%;
   }
