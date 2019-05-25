@@ -177,22 +177,23 @@ function toggleOutPage(){
 
 //Validates an Image input value for a valid URL that leads to an image.
 //Returns true if it is a valid URL.
-function checkurl(){
+async function checkurl(){
     const linkURL = getElement("image-input").value;
-    fetch(linkURL, {
+    await fetch(linkURL, {
     method: 'get',
     mode: 'cors'
     })
-    .then(function(response){
+    .then(response => {
         if(response.ok){
             return true
         } else {
             return false
         }
     })
-    .catch(error =>     alert("WARNING: There was an issue regarding the URL provided. Please, try an other one.")
-    )
-
+    .catch(error => {
+        console.error(error);
+        alert("WARNING: There was an issue regarding the URL provided. Please, try an other one.");
+    })
 }
 
 // Sets up 2 arrays, creating pairs of id Strings, and Json object values.
