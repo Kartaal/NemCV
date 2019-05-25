@@ -178,12 +178,32 @@ span, a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.m-basic, .m-social-content, .m-sector-output, .m-edu-output, .m-work-output {
+.t-edu-work {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#all-edu-output, #all-work-output {
+	width: 50%;
+	text-align: center;
+}
+
+.m-basic, .m-social-content, .m-sector-output, .m-edu-output, .m-work-output{
   background-color:  var(--text-background-color);
   border-radius: 5px;
   width: 100%;
+}
+
+.m-edu-output, .m-work-output {
+	/*
+	padding-left: 2%;
+	padding-right: 2%;
+	*/
 }
 
 .m-sector-output {
@@ -198,23 +218,32 @@ span, a {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
-
+		align-items: flex-start;
 	}
+
+	#all-edu-output, #all-work-output {
+		width: 35%;
+	}
+
 	.t-img-social{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
-
-	.m-edu, .m-work, .t-basic, .m-social{
+	.t-basic, .m-social{
 		width: 30%;
+	}
+
+	.a-social-single, .facebook, .twitter, .linkedin {
+		margin-bottom: 5px;
 	}
 
 	input {
 		font-size: 15px;
 		width: 100%;
 	}
+
 	textarea {
 		width: 100%;
 		height: 105px;
@@ -224,36 +253,31 @@ span, a {
 		font-size: 1.5em;
 		max-height: 4vh;
 		width: 50%;
-		background-color: var(--button-color);
-		border: solid 1.2px var(--border-color);
 	}
 
 	.a-tab-add-molecule:hover, 	.a-tab-add-molecule:focus {
-		background-color: var(--button-hover-color);
-		border: solid 1.2px var(--border-hover-color);
+		background-color: var(--button-hover-color-darker);
+		border: solid 1.2px var(--border-hover-color-darker);
 	}
 
 	.submit-button {
-		background-color: var(--button-color);
 		border: solid 1.2px var(--border-color);
 		font-size: 1em;
 	}
 
 	.submit-button:hover, .submit-button:focus {
-		background-color: var(--submit-hover-color);
+		background-color: var(--submit-hover-color-darker);
 		border: solid 1.2px var(--border-submit-hover-color);
 	}
 
 	label {
 		font-size: 1.5em;
 		height: 5vh;
-		width: 100%;
-		/*width: 99.4%;*/
+		width: 99.4%;
 	}
 
 	.m-sector-title{
-		width: 100%;
-  		/*width: 99.7%;*/
+		width: 99.7%;
 	}
 
 	.a-label-checkbox {

@@ -39,18 +39,18 @@
                         <!--   MOLECULE FOR BASIC PERSONAL INFO     -->
                         <div class="a-basic container-flex">
                             <label for="name-input" >Navn</label>
-                            <input type="text" id="name-input" class="name" name="name" placeholder="Dit fulde navn" />
+                            <input type="text" id="name-input" class="name" name="name" placeholder="Dit fulde navn" required />
 
                         </div>
 
                         <div class="a-social">
                             <label for="age-input">Alder</label>
-                            <input type="number" id="age-input" class="age" name="age" placeholder="Din alder i år" min="15" max="120" />
+                            <input type="number" id="age-input" class="age" name="age" placeholder="Din alder i år" min="15" max="120" required />
                         </div>
 
                         <div class="a-basic" id = "a-basic-city">
                             <label for="city-input">By</label>
-                            <input type="text" id="city-input" class="city" name="city" placeholder="Din by"/>
+                            <input type="text" id="city-input" class="city" name="city" placeholder="Din by" required/>
                         </div>
 
                     </div>
@@ -58,17 +58,14 @@
                       <!--    MOLECULE FOR IMAGE          -->
                       <div class="m-cv-image">
                           <label for="image-input">Billede</label>
-                          <input type="url" id="image-input" class="image" name="image" placeholder="URL til dit CV billede" onblur="checkurl();" />
+                          <input type="url" id="image-input" class="image" name="image" placeholder="URL til dit CV billede" onblur="checkurl();" required />
                       </div>
 
                       <div class="a-basic" id = "a-basic-misc-text">
                           <label for="misc-text-input">Om dig</label>
-                          <textarea id="misc-text-input" class="misc-text" name="misc-text" placeholder="Noget fritekst om dig, så som interesser eller lignende"></textarea>
+                          <textarea id="misc-text-input" class="misc-text" name="misc-text" placeholder="Noget fritekst om dig, så som interesser eller lignende" required></textarea>
                       </div>
-
                     </div>
-
-
                 </div>
 
                 <hr />
@@ -81,8 +78,9 @@
 
                         <div class="a-social" id = "a-social-email">
                             <label for="email-input">E-mail</label>
-                            <input type="email" id="email-input" class="email" name="email" placeholder="din@email.com" />
+                            <input type="email" id="email-input" class="email" name="email" placeholder="din@email.com" required />
                         </div>
+
                         <div class="a-social" id = "a-social-facebook">
                             <label for="facebook-input">Facebook</label>
                             <input type="url" id="facebook-input" class="facebook" name="facebook" placeholder="Din Facebook" />
@@ -145,7 +143,7 @@
 
                         <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   -->
                         <div class="m-tab-edu-single">
-                            <h3 class="a-titles"> Udannelse</h3>
+                            <h3 class="a-titles">Uddannelse</h3>
                               <label for="edu-line-1">Studieretning</label>
                               <input type="text" class="a-tab-edu-single" id="edu-line-1" placeholder="Din studieretning" >
 
@@ -235,15 +233,15 @@
                   <div id="email-out" class="a-social-email">
                       <label>E-mail</label>
                   </div>
-                  <div class="a-social-facebook">
+                  <div class="a-social-single">
                       <div id="Facebook-out" class="facebook">
                       </div>
                   </div>
-                  <div class="a-social-twitter">
+                  <div class="a-social-single">
                       <div id="Twitter-out" class="twitter">
                       </div>
                   </div>
-                  <div class="a-social-linkedin">
+                  <div class="a-social-single">
                       <div id="LinkedIn-out" class="linkedin">
                       </div>
                   </div>
@@ -279,7 +277,8 @@
         <div class="t-edu-work">
 
             <!-- CONTAINER FOR EDUCATION -->
-            <div class="m-edu" id="m-edu">
+            <div id="all-edu-output">
+                <div class="m-edu" id="m-edu">
 
                 <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   --><!--
                 <div class="m-tab-edu-single">
@@ -301,10 +300,13 @@
                     </div>
                 </div>
                 -->
+                </div>
+
             </div>
 
             <!-- CONTAINER FOR WORK -->
-            <div class="m-work" id="m-work">
+            <div id="all-work-output">
+              <div class="m-work" id="m-work">
                 <!--
                 <h3 class="a-titles">Erhvervserfaring</h3>
                 <!-- CONTAINER FOR ANY SINGLE EDUCATION ENTRY   --><!--
@@ -327,6 +329,7 @@
                 </div>
             </div>
             -->
+              </div>
             </div>
         </div>
 

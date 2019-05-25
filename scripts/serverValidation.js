@@ -20,9 +20,11 @@ function newActualWorkMolecule(json){
     actualContainer.classList.add("m-tab-edu-single");
     actualContainer.classList.add("m-work-output");
 
+/*
     const header = document.createElement("h3");
     header.classList.add("a-titles");
     header.innerHTML = "Erhvervserfaring";
+*/
 
     const titleLabel = document.createElement("label");
     titleLabel.textContent = "Titel";
@@ -47,7 +49,7 @@ function newActualWorkMolecule(json){
     timeParagraph.innerHTML = json.from + " - " + json.to;
 
     //Finally, append the molecule(s)
-    actualContainer.appendChild(header);
+    //actualContainer.appendChild(header);
     actualContainer.appendChild(titleLabel);
     actualContainer.appendChild(titleParagraph);
     actualContainer.appendChild(firmLabel);
@@ -65,9 +67,11 @@ function newActualEduMolecule(json){
     actualContainer.classList.add("m-tab-edu-single");
     actualContainer.classList.add("m-edu-output");
 
+/*
     const header = document.createElement("h3");
     header.classList.add("a-titles");
     header.innerHTML = "Uddannelse";
+*/
 
     const lineLabel = document.createElement("label");
     lineLabel.textContent = "Studieretning";
@@ -92,7 +96,7 @@ function newActualEduMolecule(json){
     timeParagraph.innerHTML = json.from + " - " + json.to;
 
     //Finally append the molecule(s)
-    actualContainer.appendChild(header);
+    //actualContainer.appendChild(header);
     actualContainer.appendChild(lineLabel);
     actualContainer.appendChild(lineParagraph);
     actualContainer.appendChild(eduLabel);
@@ -228,13 +232,21 @@ async function apply_all(json){
     */
 
     //json.employers
-    for (let empIndex = 0; empIndex < json.employers.length; empIndex++) {
-        newActualWorkMolecule(json.employers[empIndex]);
+    if(json.employers.length !== 0){
+        setupJobs();
+        for (let empIndex = 0; empIndex < json.employers.length; empIndex++) {
+            newActualWorkMolecule(json.employers[empIndex]);
+        }
     }
+
     //json.education
-    for (let eduIndex= 0; eduIndex < json.education.length; eduIndex++) {
-        newActualEduMolecule(json.education[eduIndex]);
+    if(json.education.length !== 0){
+        setupEducations();
+        for (let eduIndex= 0; eduIndex < json.education.length; eduIndex++) {
+            newActualEduMolecule(json.education[eduIndex]);
+        }
     }
+
     //json.sectors
     if(json.sectors.length !== 0){
         setupSectors();
@@ -359,7 +371,7 @@ async function remoteValidate(event) {
 
     // Checks the image url and whether all other required fields  are filled
     //  Displays an error if the check returns false
-    if(checkurl && optionsFilled){
+    if(checkurl() && optionsFilled){
         const response = await fetch("https://syst-api.azurewebsites.net/cv", options);
 
         const package = JSON.parse(options.body)
