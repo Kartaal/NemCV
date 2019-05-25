@@ -20,9 +20,11 @@ function newActualWorkMolecule(json){
     actualContainer.classList.add("m-tab-edu-single");
     actualContainer.classList.add("m-work-output");
 
+/*
     const header = document.createElement("h3");
     header.classList.add("a-titles");
     header.innerHTML = "Erhvervserfaring";
+*/
 
     const titleLabel = document.createElement("label");
     titleLabel.textContent = "Titel";
@@ -47,7 +49,7 @@ function newActualWorkMolecule(json){
     timeParagraph.innerHTML = json.from + " - " + json.to;
 
     //Finally, append the molecule(s)
-    actualContainer.appendChild(header);
+    //actualContainer.appendChild(header);
     actualContainer.appendChild(titleLabel);
     actualContainer.appendChild(titleParagraph);
     actualContainer.appendChild(firmLabel);
@@ -228,13 +230,18 @@ async function apply_all(json){
     */
 
     //json.employers
-    for (let empIndex = 0; empIndex < json.employers.length; empIndex++) {
-        newActualWorkMolecule(json.employers[empIndex]);
+    if(json.employers.length !== 0){
+      setupJobs();
+      for (let empIndex = 0; empIndex < json.employers.length; empIndex++) {
+          newActualWorkMolecule(json.employers[empIndex]);
+      }
     }
+
     //json.education
     for (let eduIndex= 0; eduIndex < json.education.length; eduIndex++) {
         newActualEduMolecule(json.education[eduIndex]);
     }
+
     //json.sectors
     if(json.sectors.length !== 0){
         setupSectors();

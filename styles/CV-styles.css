@@ -180,7 +180,7 @@ span, a {
   align-items: center;
 }
 
-.m-basic, .m-social-content, .m-sector-output, .m-edu-output, .m-work-output {
+.m-basic, .m-social-content, .m-sector-output, .m-edu-output, .m-work-output{
   background-color:  var(--text-background-color);
   border-radius: 5px;
   width: 100%;
@@ -247,13 +247,11 @@ span, a {
 	label {
 		font-size: 1.5em;
 		height: 5vh;
-		width: 100%;
-		/*width: 99.4%;*/
+		width: 99.4%;
 	}
 
 	.m-sector-title{
-		width: 100%;
-  		/*width: 99.7%;*/
+		width: 99.7%;
 	}
 
 	.a-label-checkbox {
